@@ -46,7 +46,7 @@
 
 ## commentsテーブル
 |Column|Type|Options|
-|comment|text|
+|body|text|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
 
