@@ -1,0 +1,16 @@
+.new-credit-card-box {
+  &__header {
+    &--text {
+
+    }
+  }
+  &__body {
+    &--text {
+
+    }
+    &--form {
+      .credit-card-number {}
+      .credit-card-number-form-under {}
+    }
+  }
+}
