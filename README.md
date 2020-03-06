@@ -2,7 +2,6 @@
 
 ## usersテーブル
 |Column|Type|Options|
-|------|----|-------|
 |nickname|string|null: false|
 |mail|string|null: false, unique: true, index: true|
 |password|string|null: false|
@@ -23,7 +22,6 @@
 
 ## credit_cardsテーブル
 |Column|Type|Options|
-|------|----|-------|
 |card_number|integer|null: false|
 |expiration_year|integer|null: false|
 |expiration_month|integer|null: false|
@@ -35,7 +33,6 @@
 
 ## sending_destinationsテーブル
 |Column|Type|Options|
-|------|----|-------|
 |post_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -49,7 +46,6 @@
 
 ## commentsテーブル
 |Column|Type|Options|
-|------|----|-------|
 |body|text|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
@@ -60,7 +56,6 @@
 
 ## itemsテーブル
 |Column|Type|Options|
-|------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
 |item_description|string|
@@ -86,7 +81,6 @@
 
 ## categoriesテーブル
 |Column|Type|Options|
-|------|----|-------|
 |name|string|null: false|
 |ancestry|string|null: false|
 
@@ -96,7 +90,6 @@
 
 ## brandsテーブル
 |Column|Type|Options|
-|------|----|-------|
 |name|string|null: false|
 
 ### Assosiation
@@ -104,7 +97,6 @@
 
 ## item_imagesテーブル
 |Column|Type|Options|
-|------|----|-------|
 |image|text|null: false|
 |item|references|null: false, foreign_key: true|
 
