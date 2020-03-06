@@ -1,0 +1,42 @@
+.add-credit-card-box {
+  width: 750px;
+  height: auto;
+  &__header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    &--text {
+      font-size: 30px;
+    }
+  }
+  &__body {
+    height: 400px;
+    padding: 0px 80px;
+    background-color: orange;
+    &--top {
+      height: 300px;
+      padding: 80px;
+      background-color: rgb(130, 130, 255);
+      .credit-add-button-on {
+        background-color: lightblue;
+      }
+      .credit-add-btn {
+        padding: 20px;
+        display: inline-block;
+        border-radius: 5px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lightcoral;
+      }
+    }
+    &--bottom {
+      text-align: right;
+      background-color: yellowgreen;
+      .credit-add-info {}
+    }
+  }
+}

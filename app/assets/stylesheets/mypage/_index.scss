@@ -1,3 +1,7 @@
+@import "mypage_nav";
+@import "user_profile";
+@import "add_credit_card";
+
 .mypage {
   height: auto;
   width: 100vw;
@@ -14,7 +18,7 @@
     height: auto;
     width: 100vw;
     background-color: lightgray;
-    padding: 50px;
+    padding: 50px 100px;
     display: flex;
     justify-content: space-between;
     &--contents {
