@@ -1,0 +1,26 @@
+.mypage {
+  height: auto;
+  width: 100vw;
+  background-color: black;
+  &__top {
+    height: 40px;
+    background-color: yellow;
+    line-height: 40px;
+    &--text {
+      margin-left: 60px;
+    }
+  }
+  &__main {
+    height: auto;
+    width: 100vw;
+    background-color: lightgray;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    &--contents {
+      height: auto;
+      width: auto;
+      background-color: lightsteelblue;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+-# = render '#'
+-# ヘッダー部分テンプレート
+
+.mypage
+  .mypage__top 
+    %p.mypage__top--text メルカリ > マイページ
+  -# 現在のページを表示
+
+  .mypage__main
+    = render 'mypage_nav' 
+    -# マイページ左側一覧
+    .mypage__main--contents
+      = render 'user_profile'
+      -# マイページ右側ユーザー情報
+
+-# = render '#'
+-# フッター部分テンプレート

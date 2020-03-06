@@ -1,0 +1,92 @@
+
+.user-box {
+  width: 750px;
+  height: auto;
+  margin-bottom: 50px;
+  &__profile {
+    height: auto;
+    background-color: magenta;
+    padding: 30px 20px;
+    &--image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .user-image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    &--name {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--introduction {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__tab {
+    height: 50px;
+    background-color: mintcream;
+    display: flex;
+    &--left {
+      border: 1px solid;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--right {
+      border: 1px solid;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__info {
+    height: auto;
+    padding: 10px 20px;
+    background-color: mediumpurple;
+  }
+}
+.item-box {
+  width: 750px;
+  height: auto;
+  &__text {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: magenta;
+  }
+  &__tab {
+    height: 50px;
+    display: flex;
+    background-color: mintcream;
+    &--left {
+      border: 1px solid;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--right {
+      border: 1px solid;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__info {
+    height: auto;
+    padding: 10px 20px;
+    background-color: mediumpurple;
+  }
+}
