@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_105734) do
+ActiveRecord::Schema.define(version: 2020_03_09_032914) do
 
   create_table "sending_destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_105734) do
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
