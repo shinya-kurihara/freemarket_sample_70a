@@ -1,0 +1,109 @@
+.wrapper
+  = render "shared/header"
+  .nav
+    %ul.navber
+      =link_to "#" do
+        %li furima
+      %li= icon('fa', 'angle-right')
+      =link_to "#" do
+        %li レディース
+      %li= icon('fa', 'angle-right')
+      =link_to "#" do
+        %li トップス
+      %li= icon('fa', 'angle-right')
+      =link_to "#" do
+        %li Tシャツ/カットソー(半袖/袖なし)
+      %li= icon('fa', 'angle-right')
+      =link_to "#" do
+        %li product1
+  .main
+    .showMain
+      .showMain__contents
+        .showMain__contents__content
+          .itemBox
+            .itemBox__name
+              %h2 product1
+            .itemBox__image
+              %ul
+                %li.mainImage= image_tag 'beae_s'
+                %ul
+                  %li= image_tag 'beae_s'
+                  %li= image_tag 'eae7_s'
+                  %li= image_tag '8b1d_s'
+            .itemBox__price
+              %span.totalPrice ¥10,000
+              .itemBox__price__detail
+                %span (税込) 
+                %span 送料込み
+            .itemBox__introduction
+              %p 最近は、多くの基本ブラウザでもサポートしているので使うことが多くなったFlexBoxでは、display:inline-blockとdisplay:tableのいいとこ取りって感じで、横並び要素を段落ちさせたり、順番変えたり、配置を調整したり、高さを調整したり、何かとレスポンシブに順応に対応してくれます。
+            .table
+              %table.table__details
+                %tr
+                  %th 出品者
+                  %td hoge
+                %tr
+                  %th カテゴリ
+                  %td
+                    =link_to "#" do
+                      レディース
+                    %br
+                    =link_to "#" do
+                      トップス
+                    %br
+                    =link_to "#" do
+                      Tシャツ/カットソー(半袖/袖なし)
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品のサイズ
+                  %td
+                %tr
+                  %th 商品の状態
+                  %td 新品/未使用
+                %tr
+                  %th 配送料の負担
+                  %td 送料込み（出品者負担）
+                %tr
+                  %th 発送元の地域
+                  %td
+                    =link_to "#" do 
+                      青森県
+                %tr
+                  %th 発送日の目安
+                  %td 1-2日で発送
+            .optionalArea
+              %ul.optionalArea__btn
+                %li.likeBtn 
+                  = icon('fa', 'star')
+                  お気に入り 0
+              %ul.optionalArea__btn
+                =link_to "#" do
+                  %li.reportBtn
+                    = icon('fa', 'flag')
+                    不適切な商品の通報
+          .commentBox
+            .commentContents
+              %textarea
+              %p.noticeMessage
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %submit.commentBtn
+                = icon('fa', 'comment')
+                コメントする
+          %ul.links
+            =link_to "#" do
+              %li
+                = icon('fa', 'angle-left')
+                %span 前の商品
+            =link_to "#" do
+              %li
+                %span 後ろの商品
+                = icon('fa', 'angle-right')
+          .relatedItems
+            =link_to "#" do
+              ベビー・キッズをもっと見る
+  = render "shared/appBanner"
+  = render "shared/footer"
