@@ -19,7 +19,7 @@
       &__src{
         position: relative;
         margin-bottom: 20px;
-        .number {
+        .number{
           position: absolute;
           color: white;
           background-color: #3ccace;
@@ -27,12 +27,12 @@
           font-size: 30px;
         }
       }
-      &__text {
+      &__text{
         display: flex;
         font-weight: bold;
         font-size: 24px;
         line-height: 50px;
-        .text__top {
+        .text__top{
           color: #3ccace;
         }
       }
