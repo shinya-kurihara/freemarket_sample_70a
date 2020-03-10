@@ -1,5 +1,5 @@
+-# = render partial: 'shared/mini_header'
 .single-container
-  .single-header
   .single-main
     .title
       住所情報登録
@@ -8,53 +8,53 @@
       .main
         .input
           .input__postCode
-            .input__postCode__text
+            .input__postCode__text.SideType
               .input__postCode__text.bold
                 郵便番号
               .input__postCode__text.red
                 必須
-            = f.text_field :post_code, autofocus: true, placeholder: "　例）1112222"
+            = f.text_field :post_code, autofocus: true, placeholder: "　例）1112222", class: "input__postCode__form", id: "post_code"
 
           .input__prefecture
-            .input__prefecture__text
+            .input__prefecture__text.SideType
               .input__prefecture__text.bold
                 都道府県
               .input__prefecture__text.red
                 必須
-            = f.text_field :prefecture, autofocus: true, placeholder: "　例）福岡"
+            = f.text_field :prefecture, autofocus: true, placeholder: "　例）福岡", class: "input__prefecture__form", id: "prefecture"
 
           .input__city
-            .input__city__text
+            .input__city__text.SideType
               .input__city__text.bold
                 市町村
               .input__city__text.red
                 必須
-            = f.text_field :city, autofocus: true, placeholder: "　例）福岡市"
+            = f.text_field :city, autofocus: true, placeholder: "　例）福岡市", class: "input__city__form", id: "city"
 
           .input__houseNumber
-            .input__houseNumber__text
+            .input__houseNumber__text.SideType
               .input__houseNumber__text.bold
                 番地
               .input__houseNumber__text.red
                 必須
-            = f.text_field :house_number, autofocus: true, placeholder: "　例）1-10-2"
+            = f.text_field :house_number, autofocus: true, placeholder: "　例）1-10-2", class: "input__houseNumber__form", id: "house_number"
 
           .input__buildingName
-            .input__buildingName__text
+            .input__buildingName__text.SideType
               .input__buildingName__text.bold
                 建物名
               .input__buildingName__text.red
                 任意
-            = f.text_field :building_name, autofocus: true, placeholder: "　例）マンション"
+            = f.text_field :building_name, autofocus: true, placeholder: "　例）マンション", class: "input__buildingName__form", id: "building_name"
 
           .input__phoneNumber
-            .input__phoneNumber__text
+            .input__phoneNumber__text.SideType
               .input__phoneNumber__text.bold
                 電話番号
               .input__phoneNumber__text.red
                 任意
-            = f.text_field :phone_number, autofocus: true, placeholder: "　例）09012345678"
+            = f.text_field :phone_number, autofocus: true, placeholder: "　例）09012345678", class: "input__phoneNumber__form", id: "phone_number"
         
           .input__submit__btn
-            = f.submit "Sign up"
-        = render "devise/shared/links"
+            = f.submit "登録する", class: "btn", id: "Userinput__btn" 
+-# = render partial: 'shared/mini_footer'
