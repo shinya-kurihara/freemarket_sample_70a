@@ -1,0 +1,25 @@
+.pickup-container
+  .pickup-container__head
+    ピックアップブランド
+  .pickup-container__product-box
+    .pickup-container__product-box__product-head
+      = link_to "#", class: "line" do
+        新規投稿商品
+    .pickup-container__product-box__product-lists
+      .pickup-container__product-box__product-lists__product-list
+        = link_to "#", class: "line" do
+          .pickup-container__product-box__product-lists__product-list__img
+            = image_tag asset_path("duellinks03.png"), class: "img_k"
+          .pickup-container__product-box__product-lists__product-list__body
+            .pickup-container__product-box__product-lists__product-list__body__name
+              魚
+            .pickup-container__product-box__product-lists__product-list__body__details
+              .pickup-container__produc-tbox__product-lists__product-list__body__details__price
+                200円
+              .pickup-container__product-box__product-lists__product-list__body__details__star
+                .pickup-container__product-box__product-lists__product-list__body__details__star__icon
+                  ★
+                .pickup-container__product-box__product-lists__product-list__body__details__star__value
+                  0
+              .pickup-container__product-box__product-lists__product-list__body__tax
+                (税込)

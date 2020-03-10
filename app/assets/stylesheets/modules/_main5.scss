@@ -1,55 +1,50 @@
-.pickupcontainer{
-  padding:70px 0 10px;
+.pickup-container {
+  padding: 80px 0 0;
   background-color: #f8f8f8;
   height: 100%;
-  &__head{
+  &__head {
     text-align: center;
     font-size: 28px;
     line-height: 1.4;
     font-weight: bold;
   }
-  &__productbox{
-    &__producthead{
+  &__product-box {
+    &__product-head {
       text-align: center;
-      font-weight: bold;
-      font-size: 20px;
-      .line {    
+      .line {
+        font-size: 24px;
         text-decoration: none;
-        color: #3CCACE;    
+        color: #3CCACE;
+        font-weight: bold;
       }
     }
-    .wrapper {
+    &__product-lists {
+      width: 780px;
+      margin: 26px auto;
       display: flex;
-      justify-content: center;
-    }
-    &__productlists{
-      width: 300px;
-      margin: 26px 0;
-      &__productlist{
-        width: 220px;
-        display: inline-block;
-        &__img{
+      justify-content: space-around;
+      &__product-list{
+        .line {
+          background-color: #fff;
+          display: inline-block;
+        img{
+          width: 220px;
+          height: 150px;
           background-color: white;
-          object-fit: cover;
-          .List{
-            object-fit: cover;
-          }
         }
         &__body{
-          background-color: white;
-          color: #333;
           padding: 16px;
+          background-color: white;
+          color: black;
           &__name{
+            height: 50px;
+            width: 150px;
             overflow: hidden;
-            line-height: 1.5;
-            font-size: 16px;
-            text-align: left;
           }
           &__details{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             &__price{
+              display: flex;
+              justify-content: space-between;
             }
             &__star{
               display: flex;
@@ -63,9 +58,10 @@
             }
           }
           &__tax{
-            font-size: 10px;
+            font-size: 17px;
             text-align: left;
           }
+        }
         }
       }
     }

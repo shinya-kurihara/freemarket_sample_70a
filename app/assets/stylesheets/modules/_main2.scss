@@ -10,16 +10,19 @@
   }
   &__lists {
     display: flex;
+    width: 100%;
+    max-width: 1020px;
     margin: 0 auto;
-    justify-content: space-around;
     &__tag {
       display: flex;
       flex-direction: column;
       align-items: center;
-      &__src{
+      width: 306px;
+      margin: 16px 5% 0 0;
+      &__src {
         position: relative;
         margin-bottom: 20px;
-        .number{
+        .number {
           position: absolute;
           color: white;
           background-color: #3ccace;
@@ -27,12 +30,12 @@
           font-size: 30px;
         }
       }
-      &__text{
+      &__text {
         display: flex;
         font-weight: bold;
         font-size: 24px;
         line-height: 50px;
-        .text__top{
+        .text_top {
           color: #3ccace;
         }
       }
