@@ -1,0 +1,134 @@
+#account-page.account-page
+
+a {
+  text-decoration: none;
+}
+
+.SideType{
+  display: flex;
+  align-items: center;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.red{
+  background-color: red;
+  color: white;
+  font-size: 12px;
+}
+
+.Note{
+  color: rgb(181, 181, 181);
+}
+
+.single-container {
+  font-family: 'arial';
+  .single-header {
+
+  }
+  .single-main {
+    color: #333;
+        background-color: #fff;
+        width: 700px;
+        margin: 0 auto;
+    .title{
+      width: 343px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+    .main{
+      .input{
+        font-size: 14px;
+        height: 100%;
+        width: 343px;
+        margin: 0 auto;
+        &__nickname{
+          margin: 20px 0;
+          &__text{
+            margin-bottom: 5px;
+          }
+          &__form{
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            border: solid 1px rgb(220, 220, 220);
+          }
+        }
+        &__email{
+          margin: 20px 0;
+          &__text{
+            margin-bottom: 5px;
+          }
+          &__form{
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            border: solid 1px rgb(220, 220, 220);
+          }
+
+        }
+        &__password{
+          margin: 20px 0;
+          &__text{
+            margin-bottom: 5px;
+          }
+          &__form{
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            border: solid 1px rgb(220, 220, 220);
+          }
+
+        }
+        &__name{
+          margin: 20px 0;
+          &__title{
+            margin-bottom: 5px;
+          }
+          &__description{
+            margin-bottom: 20px;
+          }
+          &__text{
+            margin-bottom: 5px;
+          }
+          &__fullname{
+            display: flex;
+            margin-bottom: 20px;
+            &__first_name{
+
+            }
+            &__last_name{
+              
+            }
+          }
+        }
+        &__kana{
+          margin: 20px 0;
+          &__text{
+            margin-bottom: 5px;
+          }
+          &__form{
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            border: solid 1px rgb(220, 220, 220);
+          }
+
+        }
+        &__birthday{
+
+        }
+        &__submit{
+
+        }
+
+      }
+    }
+
+  }
+  .single-footer{
+
+  }
+}
