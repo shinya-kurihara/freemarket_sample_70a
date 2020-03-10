@@ -1,16 +1,84 @@
+.required {
+  color: white;
+  border-radius: 2px;
+  margin-left: 5px;
+  padding: 0 2px;
+  background-color: red;
+}
 .new-credit-card-box {
+  background-color: white;
   &__header {
-    &--text {
-
-    }
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(235, 235, 235);
   }
-  &__body {
-    &--text {
-
+  &__form {
+    padding: 30px 140px;
+    &--label {
+      display: flex;
+      margin-bottom: 5px;
     }
-    &--form {
-      .credit-card-number {}
-      .credit-card-number-form-under {}
+    &--number {
+      width: 100%;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    &--images {
+      display: flex;
+      margin-top: 4px;
+      margin-bottom: 30px;
+      .credit-card-image {
+        margin-right: 4px;
+        height: 14px;
+        width: 14px;
+      }
+    }
+    &__expiration {
+      height: 40px;
+      display: flex;
+      margin-bottom: 30px;
+      line-height: 40px;
+      justify-content: space-between;
+      &--month {
+        width: 50%;
+      }
+      &--year {
+        width: 50%;
+        margin-left: 20px;
+      }
+    }
+    &__security-code {
+      width: 100%;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    &__card-info {
+      color: #0099e8;
+      width: 100%;
+      height: 20px;
+      line-height: 20px;
+      margin-bottom: 50px;
+      text-decoration: none;
+      display: flex;
+      margin-left: 120px;
+      i {
+        margin-top: 2px;
+      }
+    }
+    &__btn {
+      padding: 10px;
+      margin-top: 20px;
+      color: white;
+      font-size: 12px;
+      display: inline-block;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #3ccace;
     }
   }
 }

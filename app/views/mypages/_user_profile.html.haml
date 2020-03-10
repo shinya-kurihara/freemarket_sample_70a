@@ -3,24 +3,54 @@
     .user-box__profile--image
       = image_tag 'free.jpg', alt: 'プロフィール画像', class: 'user-image'
     .user-box__profile--name
-      %p.user-name 元山 清春
+      %p.user-name 名無し
     .user-box__profile--introduction
-      %p.user-introduction 初めまして、転売続けて2年になります。相場より安く出品してますのでみていってください。
+      %p.user-evaluation 評価 0
+      %p.user-items-count 出品数 0
   .user-box__tab
     .user-box__tab--left
-      %p.left-tab-text 左側
+      %p.left-tab-text お知らせ
     .user-box__tab--right
-      %p.right-tab-text 右側
-  .user-box__info
-    %p.user-box__info--text サンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプルサンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプル
+      %p.right-tab-text やることリスト
+  %ul.user-box__info
+    %li
+      = link_to '#', class:'user-box__info--text' do
+        = image_tag 'free.jpg', class: 'user-info-image'
+        .user-info-body
+          %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+          .user-info-body__time
+            %i.fa.fa-clock
+            %p.user-info-body__time--text ２時間前
+        %i.fa.fa-chevron-right
+    %li
+      = link_to '#', class:'user-box__info--text' do
+        = image_tag 'free.jpg', class: 'user-info-image'
+        .user-info-body
+          %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+          .user-info-body__time
+            %i.fa.fa-clock
+            %p.user-info-body__time--text ２時間前
+        %i.fa.fa-chevron-right
+    %li
+      = link_to '#', class:'user-box__info--text' do
+        = image_tag 'free.jpg', class: 'user-info-image'
+        .user-info-body
+          %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+          .user-info-body__time
+            %i.fa.fa-clock
+            %p.user-info-body__time--text ２時間前
+        %i.fa.fa-chevron-right
+    %li.user-box__info--list
+      = link_to '#', class: 'user-info-btn' do
+        %p 一覧を見る
 
 .item-box
   .item-box__text
-    %p.item-box__text--logo 取引商品
+    %p.item-box__text--logo 購入した商品
   .item-box__tab
     .item-box__tab--left
-      %p.left-tab-text 左側
+      %p.left-tab-text 取引中
     .item-box__tab--right
-      %p.right-tab-text 右側
-  .item-box__info
-    %p.item-box__info--text サンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプルサンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプル
+      %p.right-tab-text 過去の取引
+  %ul.item-box__info
+    %li.item-box__info--text 取引中の商品はありません

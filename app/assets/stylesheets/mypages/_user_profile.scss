@@ -1,10 +1,7 @@
 .user-box {
-  width: 750px;
-  height: auto;
   margin-bottom: 50px;
   &__profile {
-    height: auto;
-    background-color: magenta;
+    background-color: lightsteelblue;
     padding: 30px 20px;
     &--image {
       display: flex;
@@ -27,65 +24,110 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      .user-evaluation {
+        margin-right: 10px;
+      }
     }
   }
   &__tab {
     height: 50px;
-    background-color: mintcream;
+    background-color: white;
     display: flex;
     &--left {
-      border: 1px solid;
+      border-top: 2px solid #3ccace;
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     &--right {
-      border: 1px solid;
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: rgb(236, 236, 236);
     }
   }
   &__info {
-    height: auto;
-    padding: 10px 20px;
-    background-color: mediumpurple;
+    background-color: white;
+    &--text {
+      color: black;
+      display: flex;
+      padding: 10px;
+      text-decoration: none;
+      align-items: center;
+      border-bottom: 1px solid lightgray;
+      .user-info-image {
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+      }
+      .user-info-body {
+        width: 70%;
+        margin-right: 20px;
+        &__time {
+          display: flex;
+          color: lightgray;
+        }
+      }
+    }
+    &--list {
+      height: 70px;
+      padding: 10px;
+      .user-info-btn {
+        padding: 15px;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(236, 236, 236);
+      }
+      .user-info-btn:hover {
+        background-color: rgb(245, 245, 245);
+      }
+    }
+    &--text:hover {
+      background-color: rgb(236, 236, 236);
+    }
+
   }
 }
 .item-box {
-  width: 750px;
-  height: auto;
   &__text {
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: magenta;
+    background-color: rgb(245, 245, 245);
   }
   &__tab {
     height: 50px;
     display: flex;
-    background-color: mintcream;
+    background-color: white;
     &--left {
-      border: 1px solid;
+      border-top: 2px solid #3ccace;
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     &--right {
-      border: 1px solid;
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: rgb(236, 236, 236);
     }
   }
   &__info {
-    height: auto;
-    padding: 10px 20px;
-    background-color: mediumpurple;
+    &--text {
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+    }
   }
 }
