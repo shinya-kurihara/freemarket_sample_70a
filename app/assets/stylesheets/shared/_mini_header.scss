@@ -1,0 +1,11 @@
+.mini-header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  &__img {
+    height: 50px;
+    width: 185px;
+  }
+}

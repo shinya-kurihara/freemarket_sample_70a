@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get 'mypages/index'
   get 'products/show'
   get 'mains/index'
-  root "mains#index"
+  root "buy#index"
 end

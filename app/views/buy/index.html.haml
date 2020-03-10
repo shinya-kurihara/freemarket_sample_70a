@@ -1,0 +1,33 @@
+= render "shared/mini_header"
+
+.buy-item
+  %h2.buy-item__header 購入内容の確認
+  .buy-item__box
+    .buy-item__box__image
+      = image_tag 'free.jpg', class: 'image'
+    .buy-item__box__detail
+      %p テストテスト
+      .buy-item__box__detail__price
+        %span ¥5,000
+        %span (税込)送料込み
+  %section.buy-item__pay
+    %form
+      %ul
+        %li 支払い金額
+        %li ¥4,500
+      %input{type: 'checkbox'}
+        %label ポイントを使用
+    %section.buy-item__pay__card
+      %p 支払い方法
+      = link_to '#', class: 'buy-item__pay__card__edit' do
+        %i.fa.fa-plus-circle
+          %label 登録してください
+    %section.buy-item__pay__address
+      %p 配送先
+      = link_to '#', class: 'buy-item__pay__address__edit' do
+        %i.fa.fa-plus-circle
+          %label 登録してください
+    %section.buy-item__pay__footer
+      = link_to "購入する", '#', class: 'buy-item__pay__footer__btn'
+  
+= render "shared/mini_footer"
