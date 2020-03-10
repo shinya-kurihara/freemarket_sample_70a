@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
   get 'products/show'
   get 'mains/index'
-  root "mains#index"
+  root "mypages#index"
 end

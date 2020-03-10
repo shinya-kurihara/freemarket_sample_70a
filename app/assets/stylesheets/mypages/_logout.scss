@@ -1,0 +1,21 @@
+.logout-page {
+  padding: 40px;
+  background-color: white;
+  &__btn {
+    width: 300px;
+    margin: auto;
+    background-color: #3ccace;
+    padding: 15px;
+    display: inline-block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--text {
+      color: white;
+    }
+  }
+  &__btn:hover {
+    background-color: #39b8bd;
+  }
+}

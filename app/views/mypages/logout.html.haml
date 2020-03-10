@@ -1,0 +1,15 @@
+-# = render 'ヘッダー'
+
+.mypage
+  .mypage__top 
+    %p.mypage__top--text メルカリ > マイページ > ログアウト
+
+  .mypage__main
+    = render 'mypage_nav' 
+    .mypage__main--contents
+      .logout-page
+        = link_to '#', class:'logout-page__btn' do
+          %p.logout-page__btn--text ログアウト
+
+-# = render 'フッター'
+
