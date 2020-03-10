@@ -1,0 +1,98 @@
+.single-container
+  .single-header
+  .single-main
+    .title
+    = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .main
+        .input
+          .input__nickname
+            .input__nickname__text
+              .input__nickname__text.bold
+                ニックネーム
+              .input__nickname__text.red
+                必須
+            =f.text_field :nickname, autofocus: true, placeholder: "　例）フリマ太郎", class: "input__nickname__form", id: "nickname"
+
+          .input__email
+            .input__email__text
+              .input__emaik__text.bold
+                メールアドレス
+              .input__email__text.red
+                必須
+            = f.text_field :email, placeholder: "　PC・携帯どちらでも可", class: "input__email__form", id: "email"
+          
+          .input__password
+            .input__password__text
+              .input__password__text.bold
+                パスワード
+              .input__password__text.red
+                必須
+            = f.password_field :password, autocomplete: "off", placeholder: "　7文字以上の半角英数字", class: "input__password__form", id: "password"
+
+          .input__password
+            .input__password__text
+              .input__password__text.bold
+                パスワード(確認用)
+              .input__password__text.red
+                必須
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: "　もう一度パスワードを入力してください", class: "input__password__form", id: "password2"
+
+          .input__name
+            .input__name__title.bold
+              本人確認
+            .input__name__description
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .input__name__text
+              .input__name__text.bold
+                お名前(全角)
+              .input__name__text.red
+                必須
+            .input__name__fullname
+              = f.text_field :first_name, autofocus: true, placeholder: "　例）山田", class: "input__name__fullname__first_name", id: "first_name"
+              = f.text_field :last_name, autofocus: true, placeholder: "　例）彩", class: "input__name__fullname__last_name", id: "last_name"
+
+          .input__kana
+            .input__kana__text
+              .input__kana__text.bold
+                お名前かな(全角)
+              .input__kana__text.red
+                必須
+            .input__kana__fullname
+              = f.text_field :first_kana, autofocus: true, placeholder: "　例）やまだ", class: "input__kana__fullname__first_kana", id: "first_kana"
+              = f.text_field :last_kana, autofocus: true, placeholder: "　例）あや", class: "input__kana__fullname__last_kana", id: "last_kana"
+
+          .input__birthday
+            .input__birthday__text.SideType
+              .input__birthday__text.bold
+                生年月日
+              .input__birthday__text.red
+                必須
+            .input__birthday__select
+              .input__birthday__select__year
+                = f.select :birth_year, {}, {}, class: "birth_year", id: "input_error__birth_year", prompt: "--", autofocus: true do
+                  - array = []
+                  - array[0] = ""
+                  - for i in 1..100 do array[i] = 2011-i end
+                  = options_for_select(array)
+                %span
+                  年
+              .input__birthday__select__month
+                = f.select :birth_month, [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]], class: "birth_month", id: "input_error__birth_month", prompt: ""
+                %span
+                  月
+              .input__birthday__select__day
+                = f.select :birth_day, [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27], [28], [29], [30], [31]], class: "birth_day", id: "input_error__birth_day", prompt: ""
+                %span
+                  日
+          .input__submit
+            .input__submit__text.Note
+            ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合があります。
+            .input__submit__description
+              「登録する」のボタンを押すことにより、
+              = link_to "root_path" do
+                利用規約
+              に同意したものとみなします
+            .input__submit__btn
+              = f.submit "次へ進む", class: "Btn", id: "Userinput__btn" 
+  .single-footer
