@@ -23,45 +23,41 @@
       margin: 26px auto;
       display: flex;
       justify-content: space-around;
-      &__product-list{
+      &__product-list {
         .line {
           background-color: #fff;
           display: inline-block;
-        img{
-          width: 220px;
-          height: 150px;
-          background-color: white;
-        }
-        &__body{
-          padding: 16px;
-          background-color: white;
-          color: black;
-          &__name{
-            height: 50px;
-            width: 150px;
-            overflow: hidden;
+          text-decoration: none;
+          color: #333;
+          img {
+            width: 220px;
+            height: 150px;
+            background-color: white;
           }
-          &__details{
-            &__price{
+          .body {
+            padding: 16px;
+            background-color: white;
+            color: black;
+            &__name {
+              font-size: 16px;
+              width: 150px;
+              overflow: hidden;
+            }
+            &__details {
               display: flex;
               justify-content: space-between;
-            }
-            &__star{
-              display: flex;
-              &__icon{
-                display: inline-block;
+              &__price {
+              }
+              &__star {
                 font-size: inherit;
                 text-rendering: auto;
               }
-              &__value{
-              }
+            }
+            &__tax {
+              font-size: 10px;
+              text-align: left;
             }
           }
-          &__tax{
-            font-size: 17px;
-            text-align: left;
-          }
-        }
         }
       }
     }
