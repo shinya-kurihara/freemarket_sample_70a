@@ -6,27 +6,32 @@
     .buy-item__box__image
       = image_tag 'free.jpg', class: 'image'
     .buy-item__box__detail
-      %p テストテスト
+      %p LA JOCONDE サイズ40 赤 テーラードジャケット☆5-1-0119
       .buy-item__box__detail__price
-        %span ¥5,000
+        %span ¥4,500
         %span (税込)送料込み
   %section.buy-item__pay
     %form
-      %ul
-        %li 支払い金額
-        %li ¥4,500
-      %input{type: 'checkbox'}
-        %label ポイントを使用
+      .buy-item__pay__price
+        %p 支払い金額
+        %p.buy-item__pay__price__text ¥4,500
     %section.buy-item__pay__card
-      %p 支払い方法
-      = link_to '#', class: 'buy-item__pay__card__edit' do
-        %i.fa.fa-plus-circle
-          %label 登録してください
+      .buy-item__pay__card__text
+        %p 支払い方法
+        = link_to "変更する", '#', class: 'buy-item__pay__card__text__edit'
+      .buy-item__pay__card__list
+        %p クレジットカード
+        %p ************1234
+        %p 有効期限 00 / 00
+        = image_tag 'free.jpg', class: 'image'
     %section.buy-item__pay__address
-      %p 配送先
-      = link_to '#', class: 'buy-item__pay__address__edit' do
-        %i.fa.fa-plus-circle
-          %label 登録してください
+      .buy-item__pay__address__text
+        %p 配送先
+        = link_to "変更する", '#', class: 'buy-item__pay__address__text__edit'
+      .buy-item__pay__address__list
+        %p 〒000-0000
+        %p 福岡県 福岡市 テックエキスパート
+        %p 元山 清春
     %section.buy-item__pay__footer
       = link_to "購入する", '#', class: 'buy-item__pay__footer__btn'
   
