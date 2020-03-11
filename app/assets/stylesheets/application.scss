@@ -10,8 +10,9 @@
 @import "modules/appBanner";
 @import "modules/footer";
 @import "modules/products_show";
-@import "modules/user/new";
-@import "modules/user/new_sending_destination";
-@import "modules/user/create_sending_destination";
+@import "modules/user/registrations/new";
+@import "modules/user/registrations/new_sending_destination";
+@import "modules/user/registrations/create_sending_destination";
+@import "modules/user/sessions/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
