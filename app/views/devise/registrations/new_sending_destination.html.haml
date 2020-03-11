@@ -9,49 +9,49 @@
         .input
           .input__postCode
             .input__postCode__text.SideType
-              .input__postCode__text.bold
+              .bold
                 郵便番号
-              .input__postCode__text.red
+              .red
                 必須
             = f.text_field :post_code, autofocus: true, placeholder: "　例）1112222", class: "input__postCode__form", id: "post_code"
 
           .input__prefecture
             .input__prefecture__text.SideType
-              .input__prefecture__text.bold
+              .bold
                 都道府県
-              .input__prefecture__text.red
+              .red
                 必須
             = f.text_field :prefecture, autofocus: true, placeholder: "　例）福岡", class: "input__prefecture__form", id: "prefecture"
 
           .input__city
             .input__city__text.SideType
-              .input__city__text.bold
+              .bold
                 市町村
-              .input__city__text.red
+              .red
                 必須
             = f.text_field :city, autofocus: true, placeholder: "　例）福岡市", class: "input__city__form", id: "city"
 
           .input__houseNumber
             .input__houseNumber__text.SideType
-              .input__houseNumber__text.bold
+              .bold
                 番地
-              .input__houseNumber__text.red
+              .red
                 必須
             = f.text_field :house_number, autofocus: true, placeholder: "　例）1-10-2", class: "input__houseNumber__form", id: "house_number"
 
           .input__buildingName
             .input__buildingName__text.SideType
-              .input__buildingName__text.bold
+              .bold
                 建物名
-              .input__buildingName__text.red
+              .red
                 任意
             = f.text_field :building_name, autofocus: true, placeholder: "　例）マンション", class: "input__buildingName__form", id: "building_name"
 
           .input__phoneNumber
             .input__phoneNumber__text.SideType
-              .input__phoneNumber__text.bold
+              .bold
                 電話番号
-              .input__phoneNumber__text.red
+              .red
                 任意
             = f.text_field :phone_number, autofocus: true, placeholder: "　例）09012345678", class: "input__phoneNumber__form", id: "phone_number"
         
