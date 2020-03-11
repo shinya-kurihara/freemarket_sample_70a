@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
   get 'mypages/index'
   get 'products/show'
-  root 'mains/index'
+  root 'mains#index'
   get 'buy/index'
 end
