@@ -1,0 +1,133 @@
+.user-box {
+  margin-bottom: 50px;
+  &__profile {
+    background-color: lightsteelblue;
+    padding: 30px 20px;
+    &--image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .user-image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    &--name {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--introduction {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .user-evaluation {
+        margin-right: 10px;
+      }
+    }
+  }
+  &__tab {
+    height: 50px;
+    background-color: white;
+    display: flex;
+    &--left {
+      border-top: 2px solid #3ccace;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(236, 236, 236);
+    }
+  }
+  &__info {
+    background-color: white;
+    &--text {
+      color: black;
+      display: flex;
+      padding: 10px;
+      text-decoration: none;
+      align-items: center;
+      border-bottom: 1px solid lightgray;
+      .user-info-image {
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+      }
+      .user-info-body {
+        width: 70%;
+        margin-right: 20px;
+        &__time {
+          display: flex;
+          color: lightgray;
+        }
+      }
+    }
+    &--list {
+      height: 70px;
+      padding: 10px;
+      .user-info-btn {
+        padding: 15px;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(236, 236, 236);
+      }
+      .user-info-btn:hover {
+        background-color: rgb(245, 245, 245);
+      }
+    }
+    &--text:hover {
+      background-color: rgb(236, 236, 236);
+    }
+
+  }
+}
+.item-box {
+  &__text {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+  }
+  &__tab {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    &--left {
+      border-top: 2px solid #3ccace;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(236, 236, 236);
+    }
+  }
+  &__info {
+    &--text {
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+= render "shared/header"
+
+.mypage
+  .mypage__top 
+    %p.mypage__top--text メルカリ > マイページ > 支払い方法 > クレジットカード情報入力
+
+  .mypage__main
+    = render 'mypages/mypage_nav'
+    .mypage__main--contents
+      .new-credit-card-box
+        %p.new-credit-card-box__header クレジットカード情報入力
+
+        .new-credit-card-box__form
+          %form
+            .new-credit-card-box__form--label
+              %p カード番号
+              %p.required 必須
+            %input.new-credit-card-box__form--number{placeholder: '半角英数のみ'}
+            .new-credit-card-box__form--images
+              = image_tag 'free.jpg', class: 'credit-card-image'
+              = image_tag 'free.jpg', class: 'credit-card-image'
+              = image_tag 'free.jpg', class: 'credit-card-image'
+              = image_tag 'free.jpg', class: 'credit-card-image'
+              = image_tag 'free.jpg', class: 'credit-card-image'
+            .new-credit-card-box__form--label
+              %p 使用期限
+              %p.required 必須
+            .new-credit-card-box__form__expiration
+              .new-credit-card-box__form__expiration--month
+                %select{style: 'height: 40px; width: 80%;'}
+                  %option 1
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+                  %option 10
+                  %option 11
+                  %option 12
+              %p 月
+              .new-credit-card-box__form__expiration--year
+                %select{style: 'height: 40px; width: 80%;'}
+                  %option 2020
+                  %option 2021
+                  %option 2022
+                  %option 2023
+                  %option 2024
+                  %option 2025
+                  %option 2026
+                  %option 2027
+                  %option 2028
+                  %option 2029
+                  %option 2030
+              %p 年
+            .new-credit-card-box__form--label
+              %p セキュリティーコード
+              %p.required 必須
+            %input.new-credit-card-box__form__security-code{placeholder: 'カード背面4桁もしくは3桁の番号'}
+            = link_to '#', class: 'new-credit-card-box__form__card-info' do
+              %i.fa.fa-question-circle
+              %p カード裏面の番号とは？
+            = link_to "追加する", '#', class:'new-credit-card-box__form__btn'
+
+= render "shared/footer"

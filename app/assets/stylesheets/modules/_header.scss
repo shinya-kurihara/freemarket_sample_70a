@@ -1,0 +1,89 @@
+.header{
+  padding: 0 60px;
+  &__box{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__upper{
+      display: flex;
+      align-items: center;
+      &__title-icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        .header-image{
+          width: 140px;
+        }
+      }
+      &__search{
+        width: 100%;
+        display: flex;
+        &__input{
+          width: calc(100% - 26px);
+          height: 36px;
+          font-size: inherit;
+        }
+        &__btn{
+          .search-icon{
+            width: 36px;
+            padding: 8px;
+            background-color: #3ccace;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__navi{
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      &__left{
+        display: flex;
+        &__first-category{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+        &__brand{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+      }
+      &__right{
+        margin-left: auto;
+        display: flex;
+        &__login{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+        &__new{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+}

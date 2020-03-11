@@ -1,1 +1,37 @@
-＜フッター＞
+.footer
+  %ul.footer__contents
+    %li.footer__contents__content
+      .footer__contents__content__name
+        FURIMAについて
+      = link_to "#", class:"kaisya" do
+        会社概要
+      = link_to "#", class:"privacy" do
+        プライバシーポリシー
+      = link_to "#", class:"kiyaku" do
+        FURIMA利用規約
+      = link_to "#", class:"tokuyaku" do
+        ポイントに関する特約
+    %li.footer__contents__content
+      .footer__contents__content__name
+        FURIMAを見る
+      = link_to "#", class:"category" do
+        カテゴリー一覧
+      = link_to "#", class:"bland" do
+        ブランド一覧
+    %li.footer__contents__content
+      .footer__contents__content__name
+        ヘルプ&ガイド
+      = link_to "#", class:"guide" do
+        FURIMAガイド
+      = link_to "#", class:"guideline" do
+        FURIMAロゴ利用ガイドライン
+      = link_to "#", class:"info" do
+        お知らせ
+  =image_tag asset_path("logo-white.png"), class: "footer__logo"
+  .footer__contents__content__name__last
+    © FURIMA
+
+.exhibition-btn
+  .exhibition-btn__text
+    出品する
+    .image

@@ -1,0 +1,31 @@
+.main-visual {
+  width: 100%;
+  height: 560px;
+  background-image: asset-url("bg-mainVisual-pict_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  &__content {
+    &__subtitle {
+      color: white;
+      font-size: 60px;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 1.0);
+    }
+    &__text {
+      color: white;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 1.0);
+      font-size: 18px;
+      margin-top: 16px;
+    }
+    &__btn {
+      display: flex;
+      margin-top: 24px;
+      &__abtn {
+        margin-right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "mypage_nav";
+@import "user_profile";
+@import "add_credit_card";
+@import "logout";
+
+.mypage {
+  width: 100%;
+  height: auto;
+  background-color: rgb(235, 235, 235);
+  p {
+    font-size: 12px;
+  }
+  &__top {
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    &--text {
+      margin-left: 22%;
+    }
+  }
+  &__main {
+    padding: 35px 22%;
+    display: flex;
+    &--contents {
+      width: 560px;
+    }
+  }
+}
