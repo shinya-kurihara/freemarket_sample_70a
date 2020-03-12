@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 2020_03_11_103525) do
     t.bigint "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "image_id", null: false
     t.bigint "item_image_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
-    t.index ["image_id"], name: "index_items_on_image_id"
     t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
