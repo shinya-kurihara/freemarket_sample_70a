@@ -1,38 +1,39 @@
-= render "shared/mini_header"
+.wrapper
+  = render "shared/mini_header"
 
-.buy-item
-  %h2.buy-item__header 購入内容の確認
-  .buy-item__box
-    .buy-item__box__image
-      = image_tag 'free.jpg', class: 'image'
-    .buy-item__box__detail
-      %p LA JOCONDE サイズ40 赤 テーラードジャケット☆5-1-0119
-      .buy-item__box__detail__price
-        %span ¥4,500
-        %span (税込)送料込み
-  %section.buy-item__pay
-    %form
-      .buy-item__pay__price
-        %p 支払い金額
-        %p.buy-item__pay__price__text ¥4,500
-    %section.buy-item__pay__card
-      .buy-item__pay__card__text
-        %p 支払い方法
-        = link_to "変更する", '#', class: 'buy-item__pay__card__text__edit'
-      .buy-item__pay__card__list
-        %p クレジットカード
-        %p ************1234
-        %p 有効期限 00 / 00
+  .buy-item
+    %h2.buy-item__header 購入内容の確認
+    .buy-item__box
+      .buy-item__box__image
         = image_tag 'free.jpg', class: 'image'
-    %section.buy-item__pay__address
-      .buy-item__pay__address__text
-        %p 配送先
-        = link_to "変更する", '#', class: 'buy-item__pay__address__text__edit'
-      .buy-item__pay__address__list
-        %p 〒000-0000
-        %p 福岡県 福岡市 テックエキスパート
-        %p 元山 清春
-    %section.buy-item__pay__footer
-      = link_to "購入する", '#', class: 'buy-item__pay__footer__btn'
-  
-= render "shared/mini_footer"
+      .buy-item__box__detail
+        %p LA JOCONDE サイズ40 赤 テーラードジャケット☆5-1-0119
+        .buy-item__box__detail__price
+          %span ¥4,500
+          %span (税込)送料込み
+    %section.buy-item__pay
+      %form
+        .buy-item__pay__price
+          %p 支払い金額
+          %p.buy-item__pay__price__text ¥4,500
+      %section.buy-item__pay__card
+        .buy-item__pay__card__text
+          %p 支払い方法
+          = link_to "変更する", '#', class: 'buy-item__pay__card__text__edit'
+        .buy-item__pay__card__list
+          %p クレジットカード
+          %p ************1234
+          %p 有効期限 00 / 00
+          = image_tag 'free.jpg', class: 'image'
+      %section.buy-item__pay__address
+        .buy-item__pay__address__text
+          %p 配送先
+          = link_to "変更する", '#', class: 'buy-item__pay__address__text__edit'
+        .buy-item__pay__address__list
+          %p 〒000-0000
+          %p 福岡県 福岡市 テックエキスパート
+          %p 元山 清春
+      %section.buy-item__pay__footer
+        = link_to "購入する", '#', class: 'buy-item__pay__footer__btn'
+    
+  = render "shared/mini_footer"
