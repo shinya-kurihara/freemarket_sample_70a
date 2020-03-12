@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     post 'sending_destinations', to: 'users/registrations#create_sending_destination'
   end
   get 'mypages/index'
-  get 'products/show'
-  get 'mains/index'
   root "items#index"
   get 'exhibition/index'
   get 'products/index'
