@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'exhibition/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -10,5 +9,6 @@ Rails.application.routes.draw do
   get 'mypages/index'
   get 'products/show'
   get 'mains/index'
-  root "exhibition#index"
+  root "items#index"
+  get 'exhibition/index'
 end

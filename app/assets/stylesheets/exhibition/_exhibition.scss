@@ -20,7 +20,7 @@ html {
     }
   }
   &__main {
-    &__itemProfile{
+    &__itemProfile {
       background-color: white;
       width: 700px;
       margin: 0 auto;
@@ -43,16 +43,13 @@ html {
               height: 180px;
               background: rgb(245, 245, 245);
               border: dashed 1px rgb(204, 204, 204);
-              .hidden-field {
-                display: none;
-              }
             }
           }
         }
         &__sellGoods {
           padding: 40px;
           border-top: 1px solid #eee;
-          &__name{
+          &__name {
             font-weight: bold;
             display: flex;
           }
@@ -175,28 +172,22 @@ html {
               border-top: 1px solid #ccc;
               display: flex;
               justify-content: space-between;
-              &__title {
-              }
             }
             &__profit {
               padding: 24px 0;
               border-top: 1px solid #ccc;
               display: flex;
               justify-content: space-between;
-              &__title {
-              }
-              &__count {
-              }
             }
           }
         }
         &__warning {
           padding: 0 60px 40px 60px;
           &__links{
-            font-size: 10px;
+            font-size: 11px;
             &__link {
               text-decoration: none;
-              font-size: 12px;
+              font-size: 11px;
             }
           }
         }
@@ -215,7 +206,7 @@ html {
   //「任意」の表記
     .formAny {
       background: #bfbfbf;
-      margin: 0 0 0 8px;
+      margin-left: 8px;
       padding: 2px 4px;
       border-radius: 2px;
       color: white;
@@ -252,8 +243,8 @@ html {
       line-height: 48px;
       font-weight: bold;
       font-size: 18px;
-      background: #ea352d;
-      border: 1px solid #ea352d;
+      background: #3CCACE;
+      border: 1px solid #3CCACE;
       color: white;
       cursor: pointer;
       text-align: center;  
