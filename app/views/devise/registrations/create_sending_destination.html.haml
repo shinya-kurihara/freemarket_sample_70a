@@ -1,2 +1,17 @@
-%h2 登録が完了しました
-= link_to "トップへ戻る", root_path
+= render partial: 'shared/mini_header'
+
+.single-container
+  .single-main
+    .title
+      会員登録完了
+    .main
+      .box
+        .text
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+        .submit
+          = link_to "フリマをはじめる", root_path, class: "btn"
+
+
+= render partial: 'shared/mini_footer'

@@ -10,8 +10,15 @@
 @import "modules/appBanner";
 @import "modules/footer";
 @import "modules/products_show";
+@import "modules/user/registrations/new";
+@import "modules/user/registrations/new_sending_destination";
+@import "modules/user/registrations/create_sending_destination";
+@import "modules/user/sessions/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "mypages/index";
 @import "credit_cards/new";
 @import "exhibition/exhibition";
+@import "buy/index";
+@import "shared/mini_footer";
+@import "shared/mini_header";
