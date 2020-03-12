@@ -1,12 +1,13 @@
-= render "shared/header"
+.wrapper
+  = render "shared/header"
 
-.mypage
-  .mypage__top 
-    %p.mypage__top--text メルカリ > マイページ
+  .mypage
+    .mypage__top 
+      %p.mypage__top--text メルカリ > マイページ
 
-  .mypage__main
-    = render 'mypage_nav'
-    .mypage__main--contents
-      = render 'user_profile'
+    .mypage__main
+      = render 'mypage_nav'
+      .mypage__main--contents
+        = render 'user_profile'
 
-= render "shared/footer"
+  = render "shared/footer"
