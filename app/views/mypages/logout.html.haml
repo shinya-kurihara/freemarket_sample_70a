@@ -1,14 +1,15 @@
-= render "shared/header"
+.wrapper
+  = render "shared/header"
 
-.mypage
-  .mypage__top 
-    %p.mypage__top--text メルカリ > マイページ > ログアウト
+  .mypage
+    .mypage__top 
+      %p.mypage__top--text メルカリ > マイページ > ログアウト
 
-  .mypage__main
-    = render 'mypage_nav' 
-    .mypage__main--contents
-      .logout-page
-        = link_to '#', class:'logout-page__btn' do
-          %p.logout-page__btn--text ログアウト
+    .mypage__main
+      = render 'mypage_nav' 
+      .mypage__main--contents
+        .logout-page
+          = link_to '#', class:'logout-page__btn' do
+            %p.logout-page__btn--text ログアウト
 
-= render "shared/footer"
+  = render "shared/footer"
