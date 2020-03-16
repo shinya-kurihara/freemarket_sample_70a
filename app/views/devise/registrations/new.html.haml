@@ -80,12 +80,18 @@
                   = options_for_select(array)
                 %span
                   年
-              .input__birthday__select__month
-                = f.select :birth_month, [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]], {include_blank: true}, class: "birth_month", id: "input_error__birth_month", prompt: ""
+                = f.select :birth_month, {}, {}, class: "birth_month", id: "input_error__birth_month", prompt: "--", autofocus: true do
+                  - array = []
+                  - array[0] = ""
+                  - for i in 1..12 do array[i] = 0+i end
+                  = options_for_select(array)
                 %span
                   月
-              .input__birthday__select__day
-                = f.select :birth_day, [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27], [28], [29], [30], [31]], {include_blank: true}, class: "birth_day", id: "input_error__birth_day", prompt: ""
+                = f.select :birth_day, {}, {}, class: "birth_day", id: "input_error__birth_day", prompt: "--", autofocus: true do
+                  - array = []
+                  - array[0] = ""
+                  - for i in 1..12 do array[i] = 0+i end
+                  = options_for_select(array)
                 %span
                   日
           .input__submit
