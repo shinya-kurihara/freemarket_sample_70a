@@ -13,11 +13,6 @@ Rails.application.routes.draw do
 
   root "items#index"
   resources :credit_cards
-  #   collection do
-  #     get :show
-  #   end
-  # end
-
   resources :mypages do
     collection do
       get :logout
