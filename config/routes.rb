@@ -10,15 +10,15 @@ Rails.application.routes.draw do
   resources :exhibition, only: :index
   resources :products, only: :index
   resources :buy, only: :index
-  
-  root "items#index"
-  resources :credit_cards, only: [:new] do
-    collection do
-      get :show
-    end
-  end
 
-  resources :mypages, only: [:index] do
+  root "items#index"
+  resources :credit_cards
+  #   collection do
+  #     get :show
+  #   end
+  # end
+
+  resources :mypages do
     collection do
       get :logout
     end
