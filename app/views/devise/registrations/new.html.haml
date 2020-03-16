@@ -90,7 +90,7 @@
                 = f.select :birth_day, {}, {}, class: "birth_day", id: "input_error__birth_day", prompt: "--", autofocus: true do
                   - array = []
                   - array[0] = ""
-                  - for i in 1..12 do array[i] = 0+i end
+                  - for i in 1..31 do array[i] = 0+i end
                   = options_for_select(array)
                 %span
                   日
