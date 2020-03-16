@@ -12,7 +12,13 @@
         .add-credit-card-box__body
           .add-credit-card-box__body--btn
             %p クレジットカード一覧
-            = link_to '#', class:'add-credit-card-btn' do
+            -# -unless @card&.blank?
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = link_to "削除する", '/credit_cards/delete', method: :post
+            = link_to '/credit_cards/new', class:'add-credit-card-btn' do
               %i.fa.fa-credit-card
               %p クレジットカードを追加する
           = link_to '#', class: 'add-credit-card-box__body--info' do
