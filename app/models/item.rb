@@ -12,4 +12,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :preparation_day
 
+  def first_image
+    item_images.first
+  end
 end

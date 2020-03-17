@@ -13,5 +13,26 @@
 .pickup {
   background-color: #f8f8f8;
   padding-bottom: 30px;
-  background-color: #f8f8f8;
+  .pickup-container {
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    &__head {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__product-box {
+      &__product-head {
+        text-align: center;
+        .line {
+          font-size: 24px;
+          text-decoration: none;
+          color: #3CCACE;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

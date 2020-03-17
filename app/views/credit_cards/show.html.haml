@@ -17,8 +17,9 @@
                 %i.fa.fa-credit-card
                 %p クレジットカードを追加する
             = link_to '#', class: 'add-credit-card-box__body--info' do
-              %p.add-credit-card-info 支払い方法について
-              %i.fa.fa-chevron-right
+              .add-credit-card-info
+                %p.add-credit-card-info__text 支払い方法について
+                %i.fa.fa-chevron-right
 
   = render "shared/footer"
 

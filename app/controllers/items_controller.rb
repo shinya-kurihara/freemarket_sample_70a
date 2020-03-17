@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
   def index
-    @items = Item.all.order("created_at DESC")
-    @item_images = ItemImage.all
+    @items = Item.includes(:item_images).order("created_at DESC")
   end
 
   def show
