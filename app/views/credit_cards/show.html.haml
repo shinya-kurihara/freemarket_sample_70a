@@ -1,9 +1,11 @@
-= render "shared/header"
+.wrapper
+  = render "shared/header"
 
-.mypage
-  .mypage__top 
-    %p.mypage__top--text メルカリ > マイページ > 支払い方法
+  .mypage
+    .mypage__top 
+      %p.mypage__top--text メルカリ > マイページ > 支払い方法
 
+<<<<<<< HEAD
   .mypage__main
     = render 'mypages/mypage_nav' 
     .mypage__main--contents
@@ -24,6 +26,23 @@
           = link_to '#', class: 'add-credit-card-box__body--info' do
             %p.add-credit-card-info 支払い方法について
             %i.fa.fa-chevron-right
+=======
+    .mypage__main
+      = render 'mypages/mypage_nav' 
+      .mypage__main--contents
+        .add-credit-card-box
+          %p.add-credit-card-box__header 支払い方法
+          .add-credit-card-box__body
+            .add-credit-card-box__body--btn
+              %p クレジットカード一覧
+              = link_to '#', class:'add-credit-card-btn' do
+                %i.fa.fa-credit-card
+                %p クレジットカードを追加する
+            = link_to '#', class: 'add-credit-card-box__body--info' do
+              .add-credit-card-info
+                %p.add-credit-card-info__text 支払い方法について
+                %i.fa.fa-chevron-right
+>>>>>>> master
 
-= render "shared/footer"
+  = render "shared/footer"
 

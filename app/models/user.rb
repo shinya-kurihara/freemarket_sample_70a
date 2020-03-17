@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_one :credit_card
 
   validates :nickname,           presence: true
-  validates :email,              presence: true, uniqueness: true, format: { with: /\A([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+/i}
+  validates :email,              presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :password,           presence: true, length: { minimum: 7 }
   validates :encrypted_password, presence: true, length: { minimum: 7 }
   validates :first_name,         presence: true, format: { with: /\A[一-龥ぁ-ん]/ }

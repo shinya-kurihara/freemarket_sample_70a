@@ -27,13 +27,16 @@
       }
     }
     &--info {
-      display: flex;
-      margin-top: 40px;
-      margin-left: 330px;
       color: #3ccace;
       text-decoration: none;
       .add-credit-card-info {
-        margin-right: 10px;
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        &__text {
+          text-align: right;
+          margin-right: 10px;
+        }
       }
     }
   }

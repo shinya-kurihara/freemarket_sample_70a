@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_03_12_013710) do
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(version: 2020_03_12_013710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+=======
+ActiveRecord::Schema.define(version: 2020_03_17_062316) do
+>>>>>>> master
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
@@ -38,6 +42,10 @@ ActiveRecord::Schema.define(version: 2020_03_12_013710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "item_image_id"
+    t.integer "item_condition_id", null: false
+    t.integer "postage_payer_id", null: false
+    t.integer "preparation_day_id", null: false
+    t.integer "prefecture_id", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
