@@ -3,12 +3,10 @@ class CreditCardsController < ApplicationController
   require "payjp"
   
   def new
-    # @card = CreditCard.where(user_id: current_user.id)
     @card = CreditCard.new
-    # redirect_to action: "show" if @card.exists?
   end
 
-  def create #payjpとCardのデータベース作成を実施します。
+  def pay #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -18,8 +16,7 @@ class CreditCardsController < ApplicationController
       metadata: {user_id: current_user.id}
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      binding.pry
-      if @card.save
+      if @card.save!
         redirect_to action: "show"
         flash[:notice] = 'クレジットカードの登録が完了しました'
       else
@@ -38,17 +35,17 @@ class CreditCardsController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+    redirect_to action: "new"
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    @card = CreditCard.where(user_id: current_user.id).first
-    if @card.blank?
-      redirect_to action: "new" 
+    card = CreditCard.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = customer.cards.retrieve(@card.card_id)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
 end

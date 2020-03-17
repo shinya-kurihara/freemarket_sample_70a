@@ -9,19 +9,20 @@ Rails.application.routes.draw do
   get 'mypages/index'
   get 'products/index'
   root 'mains#index'
-  get 'buy/index'
-  # resources :credit_cards, only: [:new, :show, :create] do
-  #   collection do
-  #     post 'delete', to: 'credit_cards#delete'
-  #   end
-  # end
-  resources :credit_cards, only: [:new, :show, :create] do
+
+  resources :buy, only: [:index] do
     collection do
-      post :delete
-      post :show
-      # post 'show', to: 'credit_cards#show'
-      # post 'pay', to: 'credit_cards#pay'
-      # post 'delete', to: 'credit_cards#delete'
+      get 'index', to: 'buy#index'
+      post 'pay', to: 'buy#pay'
+      get 'done', to: 'buy#done'
+    end
+  end
+
+  resources :credit_cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
     end
   end
 end

@@ -15,7 +15,8 @@
     line-height: 40px;
     background-color: white;
     &--text {
-      margin-left: 22%;
+      padding-left: 22%;
+      box-shadow: 0 2px 4px gray;
     }
   }
   &__main {
