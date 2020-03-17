@@ -22,57 +22,63 @@
         .showMain__contents__content
           .itemBox
             .itemBox__name
-              %h2 product1
+              %h2= @item.name
             .itemBox__image
               %ul
-                %li.mainImage= image_tag 'sample2.jpeg'
+                %li
+                = image_tag @item.item_images[0].image ,class:"mainImage"
                 %ul
-                  %li= image_tag 'sample2.jpeg'
-                  %li= image_tag 'sample3.jpg'
-                  %li= image_tag 'sample3.jpg'
+                  - @item.item_images.each do |image|
+                    %li= image_tag image.image
             .itemBox__price
-              %span.totalPrice ¥10,000
+              %span.totalPrice= "¥ #{@item.price}"
               .itemBox__price__detail
                 %span (税込) 
                 %span 送料込み
+            - if user_signed_in?
+              - if @item.seller_id == current_user.id
+                = link_to "root_path", class:"sellerBtn" do
+                  %h2 自分の商品です
+              - elsif @item.buyer_id == nil
+                = link_to "#", class:"buyBtn" do
+                  %h2 購入画面に進む
+              - else
+                = link_to "root_path", class:"soldOutBtn" do
+                  %h2 Sold Out
+            - else
+              = link_to "users_sign_in", class:"buyBtn" do
+                %h2 ログインして購入
+              = link_to "users_sign_up", class:"buyBtn" do
+                %h2 新規会員登録して購入
             .itemBox__introduction
-              %p 最近は、多くの基本ブラウザでもサポートしているので使うことが多くなったFlexBoxでは、display:inline-blockとdisplay:tableのいいとこ取りって感じで、横並び要素を段落ちさせたり、順番変えたり、配置を調整したり、高さを調整したり、何かとレスポンシブに順応に対応してくれます。
+              = @item.item_description
             .table
               %table.table__details
                 %tr
                   %th 出品者
-                  %td hoge
+                  %td= @item.seller.nickname
                 %tr
                   %th カテゴリ
-                  %td
-                    =link_to "#" do
-                      レディース
-                    %br
-                    =link_to "#" do
-                      トップス
-                    %br
-                    =link_to "#" do
-                      Tシャツ/カットソー(半袖/袖なし)
+                  %td ※カテゴリ機能実装後に設定（Categoriesテーブルがないため）
+                  -# = @item.category.name
                 %tr
                   %th ブランド
-                  %td
-                %tr
-                  %th 商品のサイズ
-                  %td
+                  %td ※商品出品機能実装後に設定（Brandテーブルがないため）
+                  -# = @item.brand.name
                 %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td= @item.item_condition.name
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td= @item.postage_payer.name
                 %tr
                   %th 発送元の地域
                   %td
                     =link_to "#" do 
-                      青森県
+                      = @item.prefecture.name
                 %tr
                   %th 発送日の目安
-                  %td 1-2日で発送
+                  %td= @item.preparation_day.name
             .optionalArea
               %ul.optionalArea__btn
                 %li.likeBtn 
