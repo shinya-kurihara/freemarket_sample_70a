@@ -90,10 +90,36 @@
               }
             }
           }
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+          }
+          .buyBtn {
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #3CCACE;
+            margin-bottom: 10px;
+          }
+          .sellerBtn {
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ffb340;
+            margin-bottom: 10px;
+          }
+          .soldOutBtn {
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ffb340;
+            margin-bottom: 10px;
+          }
           &__introduction {
             line-height: 1.5;
             font-size: 18px;
-            margin-bottom: 30px;
+            margin: 30px 0;
           }
           .table {
             margin-bottom: 20px;

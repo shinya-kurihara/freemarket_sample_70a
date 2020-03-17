@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :exhibition, only: :index
-  resources :products, only: :index
+  resources :items, only: [:index, :show]
   resources :buy, only: :index
 
   root "items#index"
