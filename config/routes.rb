@@ -7,14 +7,14 @@ Rails.application.routes.draw do
     post 'sending_destinations', to: 'users/registrations#create_sending_destination'
   end
   get 'mypages/index'
-  get 'products/index'
   root 'mains#index'
 
-  resources :buy, only: [:index] do
-    collection do
-      get 'index', to: 'buy#index'
-      post 'pay', to: 'buy#pay'
-      get 'done', to: 'buy#done'
+  resources :mains, only: :show do
+    resources :buy, only: :index do
+      collection do
+        post 'pay', to: 'buy#pay'
+        get 'done', to: 'buy#done'
+      end
     end
   end
 

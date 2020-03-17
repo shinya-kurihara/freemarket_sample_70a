@@ -6,47 +6,21 @@
       = link_to "#", class: "line" do
         新規投稿商品
     .pickup-container__product-box__product-lists
-      .pickup-container__product-box__product-lists__product-list
-        = link_to "buy/index", class: "line" do
-          .pickup-container__product-box__product-lists__product-list__img
-            = image_tag asset_path("duellinks03.png"), class: "img_k"
-          .body
-            .body__name
-              魚
-            %ul.body__details
-              %li.body__details__price
-                200円
-              %li.body__details__star
-                ★0
-            .body__tax
-              (税込)
-              
-      .pickup-container__product-box__product-lists__product-list
-        = link_to "#", class: "line" do
-          .pickup-container__product-box__product-lists__product-list__img
-            = image_tag asset_path("duellinks03.png"), class: "img_k"
-          .body
-            .body__name
-              魚
-            %ul.body__details
-              %li.body__details__price
-                200円
-              %li.body__details__star
-                ★0
-            .body__tax
-              (税込)
-
-      .pickup-container__product-box__product-lists__product-list
-        = link_to "#", class: "line" do
-          .pickup-container__product-box__product-lists__product-list__img
-            = image_tag asset_path("duellinks03.png"), class: "img_k"
-          .body
-            .body__name
-              魚
-            %ul.body__details
-              %li.body__details__price
-                200円
-              %li.body__details__star
-                ★0
-            .body__tax
-              (税込)
+      - @items.each do |item|
+        .pickup-container__product-box__product-lists__product-list
+          = link_to main_path(item.id), class: "line" do
+            .pickup-container__product-box__product-lists__product-list__img
+              = image_tag "free.jpg", class: "img_k"
+                - if item.buyer_id.present?
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner SOLD
+            .body
+              .body__name
+                = item.name
+              %ul.body__details
+                %li.body__details__price
+                  = "#{item.price}円"
+                %li.body__details__star
+                  ★0
+              .body__tax
+                (税込)
