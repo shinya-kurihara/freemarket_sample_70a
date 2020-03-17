@@ -22,31 +22,19 @@
         .showMain__contents__content
           .itemBox
             .itemBox__name
-<<<<<<< HEAD:app/views/items/show.html.haml
-              = @item.name
-            .itemBox__image
-              %ul
-                %li.mainImage= image_tag 'beae_s'
-                - if @item.buyer_id.present?
-                  .items-box_photo__sold
-                    .items-box_photo__sold__inner SOLD
-=======
               %h2= @item.name
             .itemBox__image
               %ul
                 %li
                 = image_tag @item.item_images[0].image ,class:"mainImage"
->>>>>>> master:app/views/products/index.html.haml
+                - if @item.buyer_id.present?
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner SOLD
                 %ul
                   - @item.item_images.each do |image|
                     %li= image_tag image.image
             .itemBox__price
-<<<<<<< HEAD:app/views/items/show.html.haml
-              %span.totalPrice 
-                = "¥#{@item.price}"
-=======
               %span.totalPrice= "¥ #{@item.price}"
->>>>>>> master:app/views/products/index.html.haml
               .itemBox__price__detail
                 %span (税込) 
                 %span 送料込み
@@ -74,20 +62,8 @@
                   %td= @item.seller.nickname
                 %tr
                   %th カテゴリ
-<<<<<<< HEAD:app/views/items/show.html.haml
-                  %td
-                    =link_to "#" do
-                      = @item.category
-                    -# %br
-                    -# =link_to "#" do
-                    -#   トップス
-                    -# %br
-                    -# =link_to "#" do
-                    -#   Tシャツ/カットソー(半袖/袖なし)
-=======
                   %td ※カテゴリ機能実装後に設定（Categoriesテーブルがないため）
                   -# = @item.category.name
->>>>>>> master:app/views/products/index.html.haml
                 %tr
                   %th ブランド
                   %td ※商品出品機能実装後に設定（Brandテーブルがないため）

@@ -78,11 +78,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'devise'
 gem 'pry-rails'
-<<<<<<< HEAD
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'jquery-rails'
-=======
 gem 'active_hash'
->>>>>>> master
 gem 'pry-byebug'
