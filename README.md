@@ -71,7 +71,7 @@
 |buyer|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
-|brand|references|null: false, foreign_key: true|
+|brand|references|foreign_key: true|
 |image|references|null: false, foreign_key: true|
 
 ### Assosiation
