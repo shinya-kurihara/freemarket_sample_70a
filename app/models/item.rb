@@ -3,8 +3,8 @@ class Item < ApplicationRecord
 
   has_many :item_images
   has_many :comments
-  belongs_to :category
-  belongs_to :brand
+  # belongs_to :category, required: true
+  # belongs_to :brand, required: true
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
   belongs_to_active_hash :prefecture
