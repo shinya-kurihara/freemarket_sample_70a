@@ -23,7 +23,7 @@ class BuyController < ApplicationController
       currency: 'jpy',
     )
     @item_buyer = Item.find(params[:item_id])
-    @item_buyer.update( buyer_id: current_user.id)
+    @item_buyer.update!( buyer_id: current_user.id)
     redirect_to root_path
   end
 
