@@ -12,13 +12,16 @@ Rails.application.routes.draw do
       post 'show', to: 'credit_cards#show'
       post 'pay', to: 'credit_cards#pay'
       post 'delete', to: 'credit_cards#delete'
-  
+    end
+  end
+
   resources :exhibition, only: :index
   resources :items, only: [:index, :show] do
-  resources :buy, only: :index do
-    collection do
-      post 'pay', to: 'buy#pay'
-      get 'done', to: 'buy#done'
+    resources :buy, only: :index do
+      collection do
+        post 'pay', to: 'buy#pay'
+        get 'done', to: 'buy#done'
+      end
     end
   end
 
