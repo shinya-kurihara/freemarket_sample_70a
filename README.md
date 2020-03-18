@@ -24,11 +24,9 @@
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
-|user|references|null: false, foreign_key: true|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Assosiation
 - belongs_to :user
@@ -68,7 +66,7 @@
 |postage_payer_id|integer|null: false, foreign_key: true|
 |preparation_day_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false, foreign_key: true|
-|buyer|references|null: false, foreign_key: true|
+|buyer|references|foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |brand|references|foreign_key: true|
@@ -113,5 +111,3 @@
 - belongs_to :item
 
 gem => 'active_hash',  'ancestry'
-
-test
