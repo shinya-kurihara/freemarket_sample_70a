@@ -46,12 +46,12 @@
                 = link_to item_buy_index_path(@item.id), class:"buyBtn" do
                   %h2 購入画面に進む
               - else
-                = link_to "root_path", class:"soldOutBtn" do
+                = link_to root_path, class:"soldOutBtn" do
                   %h2 Sold Out
             - else
-              = link_to "users_sign_in", class:"buyBtn" do
+              = link_to new_user_session_path, class:"buyBtn" do
                 %h2 ログインして購入
-              = link_to "users_sign_up", class:"buyBtn" do
+              = link_to new_user_registration_path, class:"buyBtn" do
                 %h2 新規会員登録して購入
             .itemBox__introduction
               = @item.item_description
