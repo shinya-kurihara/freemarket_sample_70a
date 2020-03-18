@@ -1,9 +1,8 @@
 class BuyController < ApplicationController
   require 'payjp'
+  before_action :set_card, :set_item
 
   def index
-    @item = Item.find(params[:item_id])
-    card = CreditCard.where(user_id: current_user).first
     if card.blank?
       redirect_to controller: "credit_cards", action: "new"
     else
@@ -14,8 +13,6 @@ class BuyController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:item_id])
-    card = CreditCard.where(user_id: current_user).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       amount: @item.price,
@@ -27,7 +24,13 @@ class BuyController < ApplicationController
     redirect_to root_path
   end
 
-  # def done
-  #   @item = Item.find(params[:item_id])
-  # end
+  private
+
+  def set_card
+    card = CreditCard.where(user_id: current_user).first
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 end
