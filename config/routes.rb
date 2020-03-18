@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     resources :buy, only: :index do
       collection do
         post 'pay', to: 'buy#pay'
-        get 'done', to: 'buy#done'
       end
     end
   end

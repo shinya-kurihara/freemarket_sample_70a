@@ -23,7 +23,7 @@
     %section.buy-item__pay__card
       .buy-item__pay__card__text
         %p 支払い方法
-        = link_to "変更する", '/credit_cards/show', class: 'buy-item__pay__card__text__edit'
+        = link_to "変更する", credit_cards_path(current_user.id), class: 'buy-item__pay__card__text__edit'
       .buy-item__pay__card__list
         - if @default_card_information.blank?
           %br /
