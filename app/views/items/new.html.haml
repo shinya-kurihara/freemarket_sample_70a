@@ -72,7 +72,7 @@
                     商品の状態
                   .formRequire
                     必須
-                = f.collection_select :item_condition, ItemCondition.all, :id, :name, class: "exhibitInput", prompt: "選択してください"
+                = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, class: "exhibitInput", prompt: "選択してください"
 
           .exhibit__main__itemProfile__inputForm__delivery
             .exhibit__main__itemProfile__inputForm__delivery__leftBox
@@ -87,21 +87,21 @@
                     配送料の負担
                   .formRequire
                     必須
-                = f.collection_select :postage_payer, PostagePayer.all, :id, :name, class: "exhibitInput", prompt: "選択してください"
+                = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, class: "exhibitInput", prompt: "選択してください"
               .exhibit__main__itemProfile__inputForm__delivery__formBox__area
                 .exhibit__main__itemProfile__inputForm__delivery__formBox__area__select
                   .notation
                     発送元の地域
                   .formRequire
                     必須
-                = f.collection_select :prefecture, Prefecture.all, :id, :name, class: "exhibitInput", prompt: "選択してください" 
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "exhibitInput", prompt: "選択してください" 
               .exhibit__main__itemProfile__inputForm__delivery__formBox__days
                 .exhibit__main__itemProfile__inputForm__delivery__formBox__days__select
                   .notation
                     発送までの日数
                   .formRequire
                     必須
-                = f.collection_select :preparetion_day, PreparationDay.all, :id, :name, prompt: "選択してください"
+                = f.collection_select :preparetion_day_id, PreparationDay.all, :id, :name, prompt: "選択してください"
 
           .exhibit__main__itemProfile__inputForm__sellPrice
             .exhibit__main__itemProfile__inputForm__sellPrice__leftBox
