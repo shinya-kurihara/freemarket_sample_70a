@@ -7,7 +7,8 @@
     .exhibit__main
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
-        = form_with(model: @item, local: true) do |f|
+        = form_with( model: @item, url: items_path, local: true) do |f|
+          -# = render "/", model: f.object
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
@@ -16,15 +17,15 @@
                 .formRequire
                   必須
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
-                最大5枚までアップロードできます
+                最大10枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
                 .prev-content
                 .label-content
-                  %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+                  = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.new}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
-                  = f.fields_for :images do |i|
-                    = i.file_field :image_url, class: "hidden-field"
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :image, class: "hidden-field"
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
@@ -43,7 +44,7 @@
                 商品の説明
               .formRequire
                 必須
-            = f.text_area :description, class: "exhibitTextarea", placeholder: "商品の説明（必須1,000文字以内）（色、重さ、素材、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+            = f.text_area :item_description, class: "exhibitTextarea", placeholder: "商品の説明（必須1,000文字以内）（色、重さ、素材、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
             .exhibit__main__itemProfile__inputForm__sellGoods__wordCount
               0/1000
 
@@ -57,7 +58,7 @@
                     カテゴリー
                   .formRequire
                     必須
-                = f.text_field :name, class: "exhibitInput", placeholder: "選択してください"
+                = f.text_field :category, class: "exhibitInput", placeholder: "選択してください"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation
@@ -116,20 +117,21 @@
                   .formRequire
                     必須
                 = f.text_field :price,class: "exhibitInput", placeholder: "例）300〜9,999,999"
-              .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission
-                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__title
-                  販売手数料 (10%)
-                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__count
-                  %p ー
-              .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit
-                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__title
-                  販売利益
-                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__count
-                  %p ー
+              -# .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission
+              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__title
+              -#     販売手数料 (10%)
+              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__count
+              -#     ー
+              -# .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit
+              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__title
+              -#     販売利益
+              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__count
+              -#     ー
 
           .exhibit__main__itemProfile__inputForm__warning
             = f.submit :出品する ,class: "exhibitSubmit1"
-            = f.submit :もどる ,class: "exhibitSubmit2"
+            = link_to "root_path", class: "exhibitSubmit2" do
+              もどる
             .exhibit__main__itemProfile__inputForm__warning__links
               %span.exhibit__main__itemProfile__inputForm__warning__links__link
                 禁止されている

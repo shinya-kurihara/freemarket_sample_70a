@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'sending_destinations', to: 'users/registrations#create_sending_destination'
   end
   resources :mypages, only: :index
-  resources :exhibition, only: :index
+  resources :items, only: [:index, :new, :create]
   resources :products, only: :index
   resources :buy, only: :index
   root "items#index"

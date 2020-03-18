@@ -67,6 +67,7 @@
 |item_condition|references|null: false, foreign_key: true|
 |postage_payer|references|null: false, foreign_key: true|
 |preparation_day|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
@@ -74,7 +75,7 @@
 |image|references|null: false, foreign_key: true|
 
 ### Assosiation
-- has_many :images, dependent: :destroy
+- has_many :item_images, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - belongs_to :category
 - belongs_to :brand
@@ -83,6 +84,7 @@
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :postage_payer
 - belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :prefecture
 
 ## categoriesテーブル
 |Column|Type|Options|
