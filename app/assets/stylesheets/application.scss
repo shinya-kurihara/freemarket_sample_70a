@@ -5,11 +5,11 @@
 @import "modules/main2";
 @import "modules/main3";
 @import "modules/main4";
-
+@import "modules/item";
 @import "modules/main6";
 @import "modules/appBanner";
 @import "modules/footer";
-@import "modules/products_show";
+@import "modules/mains_show";
 @import "modules/user/registrations/new";
 @import "modules/user/registrations/new_sending_destination";
 @import "modules/user/registrations/create_sending_destination";
@@ -17,9 +17,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "mypages/index";
-@import "credit_cards/new";
-@import "exhibition/exhibition";
+@import "mypages/mypage_nav";
+@import "mypages/user_profile";
+@import "mypages/logout";
 @import "buy/index";
 @import "shared/mini_footer";
 @import "shared/mini_header";
-@import "modules/item";
+@import "credit_cards/show";
+@import "credit_cards/new";

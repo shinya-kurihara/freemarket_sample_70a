@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show]
+
   def index
     @items = Item.includes(:item_images).order("created_at DESC")
     @parents = Category.where(ancestry: nil)
@@ -33,6 +35,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item_images = @item.item_images
+  end
+
   # 以下全て、formatはjsonのみ
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -54,6 +60,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :item_description, :category_id, :buyer_id, :seller_id, item_images_attributes:  [:image])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
