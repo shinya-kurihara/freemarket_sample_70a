@@ -7,8 +7,7 @@
     .exhibit__main
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
-        = form_with( model: @item, url: items_path, local: true) do |f|
-          -# = render "/", model: f.object
+        = form_with model: @item, local: true do |f|
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
@@ -21,7 +20,7 @@
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
                 .prev-content
                 .label-content
-                  = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.new}" do
+                  = f.label :"item_images_attributes_0_image", class: "label-box", id: "label-box--0" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
                   = f.fields_for :item_images do |i|
