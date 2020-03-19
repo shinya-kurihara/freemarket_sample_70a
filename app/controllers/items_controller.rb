@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.includes(:item_images).order("created_at DESC")
@@ -26,6 +26,17 @@ class ItemsController < ApplicationController
     @item_images = @item.item_images
   end
 
+  def destroy
+    if @item.seller_id == current_user.id
+      if @item.destroy
+        redirect_to root_path
+      else
+        render "items/show"
+      end
+    end
+  end
+
+private
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end

@@ -56,7 +56,7 @@
       &__content {
         .itemBox {
           background-color: #fff;
-          padding: 24px 40px 40px;
+          padding: 24px 40px;
           &__name {
             text-align: center;
             font-weight: bold;
@@ -200,6 +200,35 @@
                 font-size: 14px;
               }
             }
+          }
+        }
+        .sellerSelect {
+          width: 100%;
+          margin: 10px 0;
+          background-color: #fff;
+          padding: 24px 40px;
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+          }
+          .seller__edit {
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #3CCACE;
+          }
+          p {
+            line-height: 40px;
+            text-align: center;
+            color: rgb(71, 71, 71);
+          }
+          .seller__delete {
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ffb340;
+            margin-bottom: 10px;
           }
         }
         .commentBox {
