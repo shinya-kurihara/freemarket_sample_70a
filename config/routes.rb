@@ -15,9 +15,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :exhibition, only: :index
+  root "items#index"
 
-  resources :items, only: [:index, :show, :destroy] do
+  resources :items, only: [:index, :new, :create, :show, :edit, :destroy] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
     resources :buy, only: :index do
       collection do
         post 'pay', to: 'buy#pay'
@@ -25,7 +29,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root "items#index"
   resources :credit_cards
   resources :mypages do
     collection do
