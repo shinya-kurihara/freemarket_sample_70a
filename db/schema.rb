@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_062316) do
+ActiveRecord::Schema.define(version: 2020_03_18_051410) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -32,17 +40,18 @@ ActiveRecord::Schema.define(version: 2020_03_17_062316) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "item_description", null: false
-    t.string "category", null: false
     t.bigint "buyer_id"
     t.bigint "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "item_image_id"
+    t.bigint "category_id"
     t.integer "item_condition_id", null: false
     t.integer "postage_payer_id", null: false
     t.integer "preparation_day_id", null: false
     t.integer "prefecture_id", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
@@ -81,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_062316) do
   end
 
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "item_images"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"

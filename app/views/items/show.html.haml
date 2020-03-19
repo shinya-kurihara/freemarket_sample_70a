@@ -62,8 +62,13 @@
                   %td= @item.seller.nickname
                 %tr
                   %th カテゴリ
-                  %td ※カテゴリ機能実装後に設定（Categoriesテーブルがないため）
-                  -# = @item.category.name
+                  %td
+                    = @item.category.root.name 
+                    %br/
+                    = @item.category.parent.name 
+                    %br/
+                    = @item.category.name 
+                    %br/
                 %tr
                   %th ブランド
                   %td ※商品出品機能実装後に設定（Brandテーブルがないため）
