@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   end
 
   resources :exhibition, only: :index
-  resources :items, only: [:index, :show] do
+
+  resources :items, only: [:index, :show, :destroy] do
     resources :buy, only: :index do
       collection do
         post 'pay', to: 'buy#pay'

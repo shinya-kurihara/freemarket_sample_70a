@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  has_many :item_images
+  has_many :item_images, foreign_key: :item_id, dependent: :destroy
   has_many :comments
   # belongs_to :category, required: true
   # belongs_to :brand, required: true
