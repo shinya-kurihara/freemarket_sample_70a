@@ -15,8 +15,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :exhibition, only: :index
-  resources :items, only: [:index, :show] do
+  root "items#index"
+
+  resources :items, only: [:index, :new, :create, :show, :edit, :destroy] do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
     resources :buy, only: :index do
       collection do
         post 'pay', to: 'buy#pay'
@@ -24,14 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root "items#index"
-
-  resources :items, only: [:index, :show, :new, :create, :edit, :destroy] do
-    #Ajaxで動くアクションのルートを作成
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-  
   resources :credit_cards
   resources :mypages do
     collection do

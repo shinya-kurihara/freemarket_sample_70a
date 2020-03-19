@@ -20,18 +20,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.update(seller_id: current_user.id)
-    # binding.pry
     if @item.save
       redirect_to root_path
     else
-      #セレクトボックスの初期値設定
-      @category_parent_array = ["---"]
-      #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
       redirect_to new_item_path
-
     end
   end
 
@@ -59,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :item_description, :category_id, :buyer_id, :seller_id, item_images_attributes:  [:image])
+    params.require(:item).permit(:name, :price, :item_description, :category_id, :buyer_id, :seller_id, :created_at, :updated_at, :item_image_id, :brand_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, item_images_attributes:  [:image])
   end
 
   def set_item

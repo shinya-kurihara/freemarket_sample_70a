@@ -1,7 +1,7 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -19,7 +19,7 @@ $(function(){
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='div class='exhibit__main__itemProfile__inputForm__sellDetails__formBox__category__added' id= 'grandchildren_wrapper'>
-                             <select class="exhibitInput" id="grandchild_category" name="category_id">
+                             <select class="exhibitInput" id="grandchild_category" name="item[category_id]">
                                <option value="---" data-category="---">---</option>
                                  ${insertHTML}
                              </select>
@@ -31,7 +31,7 @@ $(function(){
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_children',
+        url: 'get_category_children', 
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
