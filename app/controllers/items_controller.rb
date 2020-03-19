@@ -9,11 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
-    @categoy = Category.pluck(:ancestry)
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-       @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
   end
 
   def create
@@ -35,6 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_grandchildren
+  
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
