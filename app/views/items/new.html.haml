@@ -12,20 +12,20 @@
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
-                .notation
-                  出品画像
-                .formRequire
-                  必須
+                .notation 出品画像
+                .formRequire 必須
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
                 最大10枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
                 .prev-content
                 .label-content
-                  = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.new}" do
+                  -# = f.label :"item_images_attributes_0_image", class: "label-box", id: "label-box--0" do
+                  %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
                   = f.fields_for :item_images do |i|
                     = i.file_field :image, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                     %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
