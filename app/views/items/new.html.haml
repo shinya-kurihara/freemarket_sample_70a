@@ -7,19 +7,27 @@
     .exhibit__main
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
-        = form_with(model: @item, url: items_path,local: true) do |f|
+        = form_with( model: @item, url: items_path, local: true) do |f|
+          = render 'layouts/error_messages', model: f.object
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
-                .notation
-                  出品画像
-                .formRequire
-                  必須
+                .notation 出品画像
+                .formRequire 必須
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
                 最大10枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
-                = f.fields_for :item_images do |image|
-                  = image.file_field :image, class: "hidden-field"
+                .prev-content
+                .label-content
+                  %label{for: "item_item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :image, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_images_attributes_4_image" }
 
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name
@@ -55,7 +63,7 @@
                     ブランド
                   .formAny
                     任意
-                =f.text_field :brand, class: "exhibitInput", placeholder: "例）シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
                   .notation
@@ -96,7 +104,7 @@
           .exhibit__main__itemProfile__inputForm__sellPrice
             .exhibit__main__itemProfile__inputForm__sellPrice__leftBox
               .exhibit__main__itemProfile__inputForm__sellPrice__leftBox__title
-                価格($300〜9,999,999)
+                価格(￥300〜9,999,999)
                 =link_to "#", class: "questionMark" do
                   (?)
             .exhibit__main__itemProfile__inputForm__sellPrice__calculation
