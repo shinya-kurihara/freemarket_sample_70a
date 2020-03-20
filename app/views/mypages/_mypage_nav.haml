@@ -17,7 +17,7 @@
         %p いいね！一覧
         %i.fa.fa-chevron-right
     %li
-      = link_to '#', class:'mypage-nav__list--item' do
+      = link_to new_item_path, class:'mypage-nav__list--item' do
         %p 出品する
         %i.fa.fa-chevron-right
     %li
@@ -93,6 +93,6 @@
         %p 電話番号の確認
         %i.fa.fa-chevron-right
     %li
-      = link_to '#', class:'mypage-nav__list--item' do
+      = link_to logout_mypages_path, class:'mypage-nav__list--item' do
         %p ログアウト
         %i.fa.fa-chevron-right
