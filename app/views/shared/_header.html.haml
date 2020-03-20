@@ -16,8 +16,7 @@
           ブランド
       .header__box__navi__right
       - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__box__navi__right__logout" 
-        = link_to "| マイページ", mypages_path
+        = link_to "マイページ", mypages_path
           
       - else
         =link_to "ログイン", new_user_session_path, class:"header__box__navi__right__login" 
