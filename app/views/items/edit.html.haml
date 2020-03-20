@@ -79,7 +79,7 @@
                     ブランド
                   .formAny
                     任意
-                =f.text_field :brand, class: "exhibitInput", placeholder: "例）シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
                   .notation
