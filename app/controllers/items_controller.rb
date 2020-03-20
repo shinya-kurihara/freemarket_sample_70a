@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.includes(:item_images).order("created_at DESC")
@@ -33,6 +33,28 @@ class ItemsController < ApplicationController
       else
         render "items/show"
       end
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    redirect_to root_path and return if current_user.id != @item.seller_id
+
+    if @item.update
+      @item.item_images.each do |image|
+        image.destroy
+      end
+      if save_images(@item, image_params)
+        redirect_to item_path(@item)
+      else
+        @item = replace_item_value(@item)
+        render :edit
+      end
+    else
+      @item = replace_item_value(@item)
+      render :edit
     end
   end
 
