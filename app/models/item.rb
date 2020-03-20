@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :brand, optional: true
 
-  validates :item_images,          presence: true,length: { minimum: 1, maximum: 5}
+  validates :item_images,          presence: true
   # validates_associated :item_images
   validates :name,                   presence: true, length: { maximum: 40 }
   validates :item_description,       presence: true, length: { maximum: 1000 }

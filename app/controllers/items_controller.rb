@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
     @items = Item.includes(:item_images).order("created_at DESC")
@@ -19,15 +19,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to new_item_path, flash: { error: @item.errors.full_messages }
-      # flash[:item_image] = '1枚以上5枚以下で投稿してください'
-      # flash[:name] = '商品名を入力してください(40文字以内)'
-      # flash[:item_description] = '商品の説明を入力してください(1000文字以内)'
-      # flash[:category_id] = '3つ全て選択してください'
-      # flash[:item_condition_id] = '選択してください'
-      # flash[:postage_payer_id] = '選択してください'
-      # flash[:prefecture_id] = '選択してください'
-      # flash[:preparation_day_id] = '選択してください'
-      # flash[:price] = '選択してください'
     end
   end
 
@@ -36,12 +27,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_update_params)
+    if @item.update(item_update_params)
+      redirect_to root_path
+    end
   end
 
   def destroy
