@@ -4,7 +4,6 @@ class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
-  # belongs_to :category
   belongs_to :seller, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to_active_hash :prefecture
@@ -13,8 +12,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :brand, optional: true
 
-  # validates :item_images,          presence: true
-  validates_associated :item_images
+  validates :item_images,          presence: true
+  # validates_associated :item_images
   validates :name,                presence: true, length: { maximum: 40 }
   validates :item_description,    presence: true, length: { maximum: 1000 }
   validates :category,            presence: true

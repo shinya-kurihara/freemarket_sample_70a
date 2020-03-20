@@ -19,7 +19,6 @@
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
                 .prev-content
                 .label-content
-                  -# = f.label :"item_images_attributes_0_image", class: "label-box", id: "label-box--0" do
                   %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
@@ -65,7 +64,6 @@
                     ブランド
                   .formAny
                     任意
-                -# =f.text_field :brnad, class: "exhibitInput", placeholder: "例）シャネル"
                 = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
@@ -118,17 +116,6 @@
                   .formRequire
                     必須
                 = f.text_field :price,class: "exhibitInput", placeholder: "例）300〜9,999,999"
-              -# .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission
-              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__title
-              -#     販売手数料 (10%)
-              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__count
-              -#     ー
-              -# .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit
-              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__title
-              -#     販売利益
-              -#   .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__count
-              -#     ー
-
           .exhibit__main__itemProfile__inputForm__warning
             = f.submit :出品する ,class: "exhibitSubmit1"
             = link_to "root_path", class: "exhibitSubmit2" do
