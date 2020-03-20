@@ -13,8 +13,22 @@ a {
 
 .red{
   background-color: red;
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
   color: white;
   font-size: 12px;
+  vertical-align: top;
+}
+
+.gray{
+  background: #bfbfbf;
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  vertical-align: top;
 }
 
 .Note{
@@ -59,6 +73,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -71,6 +86,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -83,6 +99,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -95,6 +112,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -107,6 +125,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -119,6 +138,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;

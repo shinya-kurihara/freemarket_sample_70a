@@ -57,7 +57,7 @@
                     カテゴリー
                   .formRequire
                     必須
-                = f.text_field :category, class: "exhibitInput", placeholder: "選択してください"
+                = f.select :category_id, @category_parent_array, { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation
@@ -86,7 +86,7 @@
                     配送料の負担
                   .formRequire
                     必須
-                = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, { prompt: "選択してください" }, class: 'exhibitInput'
+                = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__delivery__formBox__area
                 .exhibit__main__itemProfile__inputForm__delivery__formBox__area__select
                   .notation
@@ -116,6 +116,7 @@
                   .formRequire
                     必須
                 = f.text_field :price,class: "exhibitInput", placeholder: "例）300〜9,999,999"
+
           .exhibit__main__itemProfile__inputForm__warning
             = f.submit :出品する ,class: "exhibitSubmit1"
             = link_to "root_path", class: "exhibitSubmit2" do

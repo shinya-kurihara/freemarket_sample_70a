@@ -32,7 +32,8 @@
     © FURIMA
 
 .exhibition-btn
-  .exhibition-btn__text
-    =link_to "/items/new" ,class:"ehibition" do
+  =link_to new_item_path do
+    .exhibition-btn__text
       出品する
-    .image
+    .exhibition-btn__image
+      %i.fas.fa-camera.fa-3x
