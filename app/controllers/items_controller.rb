@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    binding.pry
     @item = Item.find(params[:id])
     @item.update(item_update_params)
   end
