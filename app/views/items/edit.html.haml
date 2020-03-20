@@ -18,8 +18,32 @@
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
                 最大10枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
-                = f.fields_for :item_images do |image|
-                  = image.file_field :image, class: "hidden-field"
+                .prev-content
+                  - @item.item_images.each do |image|
+                    .preview-box
+                      .upper-box
+                        = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                      .lower-box
+                        .update-box
+                          %label.edit-btn 編集
+                        .delete-box
+                          .delete-btn
+                            %span 削除
+                .label-content
+
+                  //プレビューの数に合わせてforオプションを指定
+                  = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :item_images do |i|
+
+                    //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                    = i.file_field :item_image, class: "hidden-field"
+                    = i.check_box:_destroy, class: "hidden-checkbox"
+
+                    //5つのfile_fieldを準備するに当たって、足りない分を表示
+                  - @item.item_images.length.upto(4) do |i|
+                    %input{name: "item[item_images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
 
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name
