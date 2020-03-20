@@ -32,6 +32,7 @@ $(document).on('turbolinks:load', function(){
       setLabel();
       //hidden-fieldのidの数値のみ取得
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      console.log($(this))
       //labelボックスのidとforを更新
       $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
       //選択したfileのオブジェクトを取得
