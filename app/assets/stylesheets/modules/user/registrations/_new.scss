@@ -66,6 +66,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -78,6 +79,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -91,6 +93,7 @@ a {
             margin-bottom: 5px;
           }
           &__form{
+            padding-left: 10px;
             height: 45px;
             width: 100%;
             border-radius: 5px;
@@ -113,6 +116,7 @@ a {
             display: flex;
             margin-bottom: 20px;
             &__first_name{
+              padding-left: 10px;
               height: 45px;
               width: 100%;
               border-radius: 5px;
@@ -120,6 +124,7 @@ a {
               margin-right: 5px;
             }
             &__last_name{
+              padding-left: 10px;
               height: 45px;
               width: 100%;
               border-radius: 5px;
@@ -136,6 +141,7 @@ a {
             display: flex;
             margin-bottom: 20px;
             &__first_kana{
+              padding-left: 10px;
               height: 45px;
               width: 100%;
               border-radius: 5px;
@@ -143,6 +149,7 @@ a {
               margin-right: 5px;
             }
             &__last_kana{
+              padding-left: 10px;
               height: 45px;
               width: 100%;
               border-radius: 5px;
@@ -159,16 +166,19 @@ a {
             display: flex;
             justify-content: flex-start;
             .birth_year{
+              padding-left: 10px;
               height: 45px;
               width: 76px;
               margin-top: 5px;
             }
             .birth_month{
+              padding-left: 10px;
               height: 45px;
               width: 76px;
               margin-top: 5px;
             }
             .birth_day{
+              padding-left: 10px;
               height: 45px;
               width: 76px;
               margin-top: 5px;
