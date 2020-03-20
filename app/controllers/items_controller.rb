@@ -13,22 +13,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.update(seller_id: current_user.id)
-    if @item.save
-      redirect_to root_path
-    else
-      redirect_to new_item_path
-    end
-  end
-
-  def new
-    @item = Item.new
-    @item.item_images.new
-    # @item.brands.new
-  end
-
-  def create
     # binding.pry
     @item = Item.new(item_params)
     # @item.save(seller_id: current_user.id)
@@ -86,6 +70,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name,
       [images_attributes: [:image, :_destroy, :id]])
+  end
 
   def set_item
     @item = Item.find(params[:id])
