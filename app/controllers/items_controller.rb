@@ -13,11 +13,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
-    # @item.save(seller_id: current_user.id)
     @item.seller_id = current_user.id
-    # binding.pry
     if @item.save
       redirect_to root_path
     else
@@ -52,22 +49,27 @@ class ItemsController < ApplicationController
   end
 
   def update
-    redirect_to root_path and return if current_user.id != @item.seller_id
-
-    if @item.update
-      @item.item_images.each do |image|
-        image.destroy
-      end
-      if save_images(@item, image_params)
-        redirect_to item_path(@item)
-      else
-        @item = replace_item_value(@item)
-        render :edit
-      end
-    else
-      @item = replace_item_value(@item)
-      render :edit
-    end
+    @item = Item.find(params[:id])
+    @item.update(item_update_params)
+    # if current_user.id != @item.seller_id
+    #   redirect_to root_path and return 
+    # else
+    #   @item.update(item_update_params)
+    # end
+    # if @item.update
+    #   @item.item_images.each do |image|
+    #     image.destroy
+    #   end
+    #   if save_images(@item, image_params)
+    #     redirect_to item_path(@item)
+    #   else
+    #     @item = replace_item_value(@item)
+    #     render :edit
+    #   end
+    # else
+    #   @item = replace_item_value(@item)
+    #   render :edit
+    # end
   end
 
   def get_category_children
