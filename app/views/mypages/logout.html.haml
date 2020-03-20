@@ -9,7 +9,7 @@
       = render 'mypage_nav' 
       .mypage__main--contents
         .logout-page
-          = link_to '#', class:'logout-page__btn' do
+          = link_to destroy_user_session_path, method: :delete, class:'logout-page__btn' do
             %p.logout-page__btn--text ログアウト
 
   = render "shared/footer"
