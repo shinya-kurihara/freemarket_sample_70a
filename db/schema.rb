@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_094300) do
     t.integer "postage_payer_id", null: false
     t.integer "preparation_day_id", null: false
     t.integer "prefecture_id", null: false
-    t.integer "brand_id"
     t.bigint "category_id"
+    t.integer "brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["item_image_id"], name: "index_items_on_item_image_id"
