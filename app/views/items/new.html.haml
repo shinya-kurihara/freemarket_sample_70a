@@ -8,7 +8,14 @@
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
         = form_with( model: @item, url: items_path, local: true) do |f|
-          = render 'layouts/error_messages', model: f.object
+          - if flash[:error].present?
+            %ul.errors
+              - flash[:error].each do |e|
+                %li=e
+            .alert.alert-danger
+              %ul
+                - @item.errors.full_messages.each do |msg|
+                  %li= msg
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
@@ -24,10 +31,11 @@
                 .hidden-content
                   = f.fields_for :item_images do |i|
                     = i.file_field :image, class: "hidden-field"
-                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][0][image]", id: "item_item_images_attributes_0_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" }
 
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name
@@ -56,7 +64,7 @@
                     カテゴリー
                   .formRequire
                     必須
-                = f.select :category_id, @category_parent_array, { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
+                = f.select :category_id, Category.where(ancestry: nil).pluck(:name), { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation

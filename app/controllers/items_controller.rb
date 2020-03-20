@@ -13,15 +13,21 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
-    # @item.save(seller_id: current_user.id)
     @item.seller_id = current_user.id
-    # binding.pry
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
+      # flash[:item_image] = '1枚以上5枚以下で投稿してください'
+      # flash[:name] = '商品名を入力してください(40文字以内)'
+      # flash[:item_description] = '商品の説明を入力してください(1000文字以内)'
+      # flash[:category_id] = '3つ全て選択してください'
+      # flash[:item_condition_id] = '選択してください'
+      # flash[:postage_payer_id] = '選択してください'
+      # flash[:prefecture_id] = '選択してください'
+      # flash[:preparation_day_id] = '選択してください'
+      # flash[:price] = '選択してください'
     end
   end
 
