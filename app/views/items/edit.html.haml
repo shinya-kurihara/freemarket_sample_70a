@@ -7,7 +7,7 @@
     .exhibit__main
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
-        = form_with(model: @item, url: items_path,local: true) do |f|
+        = form_with(model: @item, url: item_path,local: true) do |f|
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
@@ -79,7 +79,7 @@
                     ブランド
                   .formAny
                     任意
-                =f.text_field :brand, class: "exhibitInput", placeholder: "例）シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
                   .notation
@@ -133,8 +133,8 @@
                 = f.text_field :price,class: "exhibitInput", placeholder: "例）300〜9,999,999"
 
           .exhibit__main__itemProfile__inputForm__warning
-            = f.submit :変更する ,class: "exhibitSubmit1"
-            = link_to "root_path", class: "exhibitSubmit2" do
+            = f.submit '変更する', class: "exhibitSubmit1"
+            = link_to root_path, class: "exhibitSubmit2" do
               もどる
             .exhibit__main__itemProfile__inputForm__warning__links
               %span.exhibit__main__itemProfile__inputForm__warning__links__link
