@@ -69,19 +69,20 @@
 |buyer|references|foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
+|brand|integer|foreign_key: true|
 |image|references|null: false, foreign_key: true|
 
 ### Assosiation
-- has_many :images, dependent: :destroy
+- has_many :item_images, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - belongs_to :category
-- belongs_to :brand
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :postage_payer
 - belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :brand
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -92,14 +93,6 @@
 ### Assosiation
 - has_many :items
 - has_ancestry
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Assosiation
-- has_many :items
 
 ## item_imagesテーブル
 |Column|Type|Options|

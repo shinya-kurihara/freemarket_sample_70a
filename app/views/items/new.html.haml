@@ -7,19 +7,35 @@
     .exhibit__main
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
-        = form_with(model: @item, url: items_path,local: true) do |f|
+        = form_with( model: @item, url: items_path, local: true) do |f|
+          - if flash[:error].present?
+            %ul.errors
+              - flash[:error].each do |e|
+                %li=e
+            .alert.alert-danger
+              %ul
+                - @item.errors.full_messages.each do |msg|
+                  %li= msg
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
-                .notation
-                  出品画像
-                .formRequire
-                  必須
+                .notation 出品画像
+                .formRequire 必須
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
                 最大10枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
-                = f.fields_for :item_images do |image|
-                  = image.file_field :image, class: "hidden-field"
+                .prev-content
+                .label-content
+                  %label{for: "item_item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :image, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][0][image]", id: "item_item_images_attributes_0_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" }
 
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name
@@ -48,14 +64,14 @@
                     カテゴリー
                   .formRequire
                     必須
-                = f.select :category_id, @category_parent_array, { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
+                = f.select :category_id, Category.where(ancestry: nil).pluck(:name), { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation
                     ブランド
                   .formAny
                     任意
-                =f.text_field :brand, class: "exhibitInput", placeholder: "例）シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: "選択してください" }, class: "exhibitInput"
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
                   .notation
@@ -96,7 +112,7 @@
           .exhibit__main__itemProfile__inputForm__sellPrice
             .exhibit__main__itemProfile__inputForm__sellPrice__leftBox
               .exhibit__main__itemProfile__inputForm__sellPrice__leftBox__title
-                価格($300〜9,999,999)
+                価格(￥300〜9,999,999)
                 =link_to "#", class: "questionMark" do
                   (?)
             .exhibit__main__itemProfile__inputForm__sellPrice__calculation
@@ -147,4 +163,4 @@
       =link_to "#" , class: ".exhibit__footer__logo" do
         =image_tag asset_path("logo.png"),class: "exhibit__footer__logo__image"
       .exhibit__footer__ending
-        © Furima, Inc.
+        © Furima,Inc.
