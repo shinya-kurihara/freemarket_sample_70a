@@ -26,16 +26,6 @@ class ItemsController < ApplicationController
     @item_images = @item.item_images
   end
 
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  def update
-    binding.pry
-    @item = Item.find(params[:id])
-    @item.update(item_update_params)
-  end
-
   def destroy
     if @item.seller_id == current_user.id
       if @item.destroy
@@ -50,31 +40,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
       redirect_to item_path(@item)
     else
       render :edit
     end
-    # if current_user.id != @item.seller_id
-    #   redirect_to root_path and return 
-    # else
-    #   @item.update(item_update_params)
-    # end
-    # if @item.update
-    #   @item.item_images.each do |image|
-    #     image.destroy
-    #   end
-    #   if save_images(@item, image_params)
-    #     redirect_to item_path(@item)
-    #   else
-    #     @item = replace_item_value(@item)
-    #     render :edit
-    #   end
-    # else
-    #   @item = replace_item_value(@item)
-    #   render :edit
-    # end
   end
 
   def get_category_children
@@ -96,9 +66,7 @@ class ItemsController < ApplicationController
   end
 
   def item_update_params
-    params.require(:item).permit(
-      :name,
-      [images_attributes: [:image, :_destroy, :id]])
+    params.require(:item).permit(:name, :price, :item_description, :updated_at, :category_id, :brand_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, [item_images_attributes: [:image, :_destroy, :id]])
   end
 
   def set_item
