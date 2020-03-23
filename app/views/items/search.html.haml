@@ -1,0 +1,15 @@
+.wrapper
+  = render "shared/header"
+  .main
+    .pickup
+      .pickup-container
+        .pickup-container__head
+          キーワード検索
+        .pickup-container__product-box
+          .pickup-container__product-box__product-head
+            = link_to "#", class: "line" do
+              検索結果
+        .pickup-container__product-box__product-lists
+          = render @items
+  = render "shared/appBanner"
+  = render "shared/footer"

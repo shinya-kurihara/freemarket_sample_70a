@@ -27,4 +27,12 @@ class Item < ApplicationRecord
   def first_image
     item_images.first
   end
+
+  def self.search(search)
+    if search
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
