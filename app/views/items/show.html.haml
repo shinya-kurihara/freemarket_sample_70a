@@ -100,7 +100,7 @@
             .sellerSelect
               = link_to '商品の編集', edit_item_path(@item.id), class: 'seller__edit'
               %p または
-              = link_to 'この商品を削除する', item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
           .commentBox
             .commentContents
               %textarea
