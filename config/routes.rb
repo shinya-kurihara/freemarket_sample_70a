@@ -31,6 +31,9 @@ Rails.application.routes.draw do
         post 'pay', to: 'buy#pay'
       end
     end
+    collection do
+      get 'search'
+    end
   end
 
   resources :credit_cards

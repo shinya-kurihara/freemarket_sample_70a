@@ -7,7 +7,7 @@ class CreditCardsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_fa6fe4bc92f74e28b16adf2c"
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -28,7 +28,7 @@ class CreditCardsController < ApplicationController
 
   def delete
     unless @card.blank?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = "sk_test_fa6fe4bc92f74e28b16adf2c"
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
@@ -40,7 +40,7 @@ class CreditCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = "sk_test_fa6fe4bc92f74e28b16adf2c"
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end

@@ -45,12 +45,10 @@ $(document).on('turbolinks:load', function(){
       $('.label-content').css('width', labelWidth);
     }
 
-    // 追加
     $(document).on('change', '.hidden-field', function() {
       setLabel();
       //hidden-fieldのidの数値のみ取得
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
-      console.log($(this))
       //labelボックスのidとforを更新
       $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_image`});
       //選択したfileのオブジェクトを取得
@@ -80,6 +78,7 @@ $(document).on('turbolinks:load', function(){
         if ($(`#item_item_images_attributes_${id}__destroy`)){
           $(`#item_item_images_attributes_${id}__destroy`).prop('checked',false);
         } 
+
         //ラベルのwidth操作
         setLabel();
         //ラベルのidとforの値を変更
@@ -89,7 +88,6 @@ $(document).on('turbolinks:load', function(){
         }
       }
     });
-
     // 画像の削除
     $(document).on('click', '.delete-box', function() {
       var count = $('.preview-box').length;

@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
     end
   end
 
@@ -73,6 +73,10 @@ class ItemsController < ApplicationController
       end
       render :edit
     end
+
+  def search
+    @items = Item.search(params[:keyword])
+    @parents = Category.where(ancestry: nil)
   end
 
   def get_category_children
