@@ -39,17 +39,14 @@ class ItemsController < ApplicationController
   def edit
     grandchild_category = @item.category
     child_category = grandchild_category.parent
-    
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-
     @category_children_array = []
     Category.where(ancestry: child_category.ancestry).each do |children|
       @category_children_array << children
     end
-
     @category_grandchildren_array = []
     Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
       @category_grandchildren_array << grandchildren
@@ -60,6 +57,20 @@ class ItemsController < ApplicationController
     if @item.update(item_update_params)
       redirect_to item_path(@item)
     else
+      grandchild_category = @item.category
+      child_category = grandchild_category.parent
+      @category_parent_array = []
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+      @category_children_array = []
+      Category.where(ancestry: child_category.ancestry).each do |children|
+        @category_children_array << children
+      end
+      @category_grandchildren_array = []
+      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+        @category_grandchildren_array << grandchildren
+      end
       render :edit
     end
   end
@@ -79,11 +90,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:id, :name, :price, :item_description, :category_id, :buyer_id, :seller_id, :created_at, :updated_at, :item_image_id, :brand_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, item_images_attributes: [:image])
+    params.require(:item).permit(:id, :name, :price, :item_description, :category_id, :buyer_id, :seller_id, :created_at, :updated_at, :item_image_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, item_images_attributes: [:image])
   end
 
   def item_update_params
-    params.require(:item).permit(:name, :price, :item_description, :updated_at, :category_id, :brand_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, [item_images_attributes: [:image, :_destroy, :id]])
+    params.require(:item).permit(:name, :price, :item_description, :updated_at, :category_id, :item_condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, [item_images_attributes: [:image, :_destroy, :id]])
   end
 
   def set_item

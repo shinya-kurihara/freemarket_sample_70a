@@ -8,6 +8,7 @@
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
         = form_with(model: @item, url: item_path,local: true) do |f|
+          = render 'layouts/error_messages', model: f.object
           .exhibit__main__itemProfile__inputForm__sellImage
             .exhibit__main__itemProfile__inputForm__sellImage__upload
               .exhibit__main__itemProfile__inputForm__sellImage__upload__head
