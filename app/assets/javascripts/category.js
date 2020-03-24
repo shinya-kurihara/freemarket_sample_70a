@@ -44,6 +44,7 @@ $(function(){
           insertHTML += appendOption(child);
         });
         appendChidrenBox(insertHTML);
+        console.log(insertHTML)
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');

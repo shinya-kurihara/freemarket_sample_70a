@@ -53,7 +53,6 @@ $(document).on('turbolinks:load', function(){
       console.log($(this))
       //labelボックスのidとforを更新
       $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_image`});
-      console.log("labelのid変更")
       //選択したfileのオブジェクトを取得
       var file = this.files[0];
       var reader = new FileReader();
