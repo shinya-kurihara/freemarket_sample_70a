@@ -28,11 +28,6 @@ class Item < ApplicationRecord
     item_images.first
   end
 
-  def self.search(search)
-    if search
-      Item.where('name LIKE(?)', "%#{search}%")
-    else
-      Item.all
-    end
-  end
+  scope :search, -> (search){where('name LIKE(?)', "%#{search}%")}
+
 end
