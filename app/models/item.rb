@@ -26,4 +26,7 @@ class Item < ApplicationRecord
   def first_image
     item_images.first
   end
+
+  scope :search, -> (search){where('name LIKE(?)', "%#{search}%")}
+
 end
