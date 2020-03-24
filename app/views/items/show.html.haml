@@ -1,22 +1,10 @@
 .wrapper
   = render "shared/header"
-  .nav
-    %ul.navber
-      =link_to "#" do
-        %li furima
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li レディース
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li トップス
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li Tシャツ/カットソー(半袖/袖なし)
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li product1
   .main
+    %nav.breadcrumbs 
+      %ol
+        %li= link_to "フリマ", root_path
+        %li= @item.name
     .showMain
       .showMain__contents
         .showMain__contents__content

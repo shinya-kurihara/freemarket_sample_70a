@@ -1,0 +1,23 @@
+.breadcrumbs ol {
+  font-size: 14px;
+  display: flex;
+  padding-left: 22%;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: 0 2px 4px gray;
+  background-color: white;
+  a {
+    color: black;
+  }
+  li::after {
+    content: '＞';
+    display: inline-block;
+    padding: 0 10px;
+  }
+  li:last-child {
+    font-weight: bold;
+  }
+  li:last-child::after {
+    display: none;
+  }
+}
