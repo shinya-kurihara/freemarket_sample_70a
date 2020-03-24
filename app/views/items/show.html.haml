@@ -71,8 +71,7 @@
                     %br/
                 %tr
                   %th ブランド
-                  %td ※商品出品機能実装後に設定（Brandテーブルがないため）
-                  -# = @item.brand.name
+                  %td= @item.brand.name
                 %tr
                   %th 商品の状態
                   %td= @item.item_condition.name
