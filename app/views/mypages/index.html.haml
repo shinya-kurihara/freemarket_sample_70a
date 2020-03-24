@@ -1,10 +1,12 @@
 .wrapper
   = render "shared/header"
 
-  .mypage
-    .mypage__top 
-      %p.mypage__top--text フリマ > マイページ
+  %nav.breadcrumbs 
+    %ol
+      %li= link_to "フリマ"
+      %li マイページ
 
+  .mypage
     .mypage__main
       = render 'mypage_nav'
       .mypage__main--contents
