@@ -4,6 +4,7 @@ class CreditCardsController < ApplicationController
   
   def new
     @card = CreditCard.new
+    @parents = Category.where(ancestry: nil)
   end
 
   def pay
