@@ -73,6 +73,7 @@ class ItemsController < ApplicationController
       end
       render :edit
     end
+  end
 
   def search
     @items = Item.search(params[:keyword])
