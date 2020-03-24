@@ -69,7 +69,11 @@
                     カテゴリー
                   .formRequire
                     必須
-                -# = f.select :category_id, @category_parent_array, { prompt: "選択してください" }, {class: 'exhibitInput', id: 'parent_category'}
+                = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'exhibitInput', id: 'parent_category'}
+                .exhibit__main__itemProfile__inputForm__sellDetails__formBox__category__added#children_wrapper
+                  = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'exhibitInput', id: 'child_category'}
+                .exhibit__main__itemProfile__inputForm__sellDetails__formBox__category__added#grandchildren_wrapper
+                  = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'exhibitInput', id: 'grandchild_category'}
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation
