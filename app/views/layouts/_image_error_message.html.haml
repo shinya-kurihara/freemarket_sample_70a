@@ -1,0 +1,5 @@
+-if @item_image.errors.any? 
+  .alert
+    %ul
+      -@item_image.errors.full_messages.each do |message|
+        %li= message

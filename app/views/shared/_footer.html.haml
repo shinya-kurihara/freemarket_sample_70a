@@ -31,9 +31,10 @@
   .footer__contents__content__name__last
     © FURIMA
 
-.exhibition-btn
-  =link_to new_item_path, data:{"turbolinks" => false} do
-    .exhibition-btn__text
-      出品する
-    .exhibition-btn__image
-      %i.fas.fa-camera.fa-3x
+- if user_signed_in?
+  .exhibition-btn
+    =link_to new_item_path, data:{"turbolinks" => false} do
+      .exhibition-btn__text
+        出品する
+      .exhibition-btn__image
+        %i.fas.fa-camera.fa-3x

@@ -31,7 +31,6 @@
                 .hidden-content
                   = f.fields_for :item_images do |i|
                     = i.file_field :image, class: "hidden-field"
-                    %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][0][image]", id: "item_item_images_attributes_0_image" }
                     %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image" }
                     %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" }
                     %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" }
@@ -163,4 +162,4 @@
       =link_to "#" , class: ".exhibit__footer__logo" do
         =image_tag asset_path("logo.png"),class: "exhibit__footer__logo__image"
       .exhibit__footer__ending
-        © Furima,Inc.
+        © Furima, Inc.
