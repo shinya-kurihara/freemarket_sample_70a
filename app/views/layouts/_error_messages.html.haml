@@ -1,5 +1,5 @@
--if @item_image.errors.any? 
+-if @item.errors.any? 
   .alert
     %ul
-      -@item_image.errors.full_messages.each do |message|
+      -@item.errors.full_messages.each do |message|
         %li= message
