@@ -9,15 +9,15 @@
       .showMain__contents
         .showMain__contents__content
           .itemBox
-            .itemBox__name
-              %h2= @item.name
+            -# .itemBox__name
+            -#   %h2= "商品名：#{@item.name}"
             .itemBox__image
               %ul
-                %li
+                %li.top-image
                 = image_tag @item_images[0].image.url ,class:"mainImage"
                   - if @item.buyer_id.present?
-                  .sold-cover
-                  %p.sold sold
+                  .sold-cover.show
+                  %p.sold.show sold
                 %ul
                   - @item_images.each do |image|
                     %li= image_tag image.image.url
@@ -42,7 +42,7 @@
               = link_to new_user_registration_path, class:"buyBtn" do
                 %h2 新規会員登録して購入
             .itemBox__introduction
-              = @item.item_description
+              = "商品説明：#{@item.item_description}"
             .table
               %table.table__details
                 %tr
