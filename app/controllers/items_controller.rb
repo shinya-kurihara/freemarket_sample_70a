@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_category, only: [:index, :show, :search]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -89,10 +88,6 @@ class ItemsController < ApplicationController
   end
 
   def set_parents
-    @parents = Category.where(ancestry: nil)
-  end
-
-  def set_category
     @parents = Category.where(ancestry: nil)
   end
 
