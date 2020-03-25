@@ -100,8 +100,8 @@
   h2{
     a{
       span{
-      &:hover {
-      color: #0095EE;
+        &:hover {
+        color: #0095EE;
         }
       }
     } 
@@ -114,15 +114,16 @@ ul.category1{
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   width: 224px;
+  height: 700px;
   list-style: none;
   text-align: center;
   cursor: pointer;
   text-align: center;
   li{
-  &:hover {
-  background-color: #ea352d;
-  a {
-    color: #fff;
+    &:hover {
+      background-color: #ea352d;
+      a {
+          color: #fff;
       }
     }
   }
@@ -133,28 +134,29 @@ ul.category2{
   background-color: rgb(255, 255, 255);
   bottom: 0px;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  display: none;
+  display: block;
   left: 224px;
   position: absolute;
   top: 32px;
   width: 224px;
+  height: 700px;
   cursor: pointer;
   text-align: center;
   li.child__list{
     background-color: rgb(255, 255, 255);
-  a{
-    color:#000;
+    a{
+      color:#000;
+    }
   }
-}
   li{
     &:hover {
-    background-color: #ea352d;
-    a {
-      color: #fff;
-        }
+      background-color: #ea352d;
+      a {
+        color: #fff;
       }
     }
   }
+}
 
 
 ul.category3{
@@ -162,11 +164,12 @@ ul.category3{
   background-color: rgb(255, 255, 255);
   bottom: 0px;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  display: none;
+  display: block;
   left: 224px;
   position: absolute;
   top: 0px;
   width: 224px;
+  height: 700px;
   cursor: pointer;
   text-align: center;
   li.grandchild__list{
@@ -177,12 +180,12 @@ ul.category3{
   }
   li{
     &:hover {
-    background-color: #ea352d;
-    a {
-      color: #fff;
-        }
+      background-color: #ea352d;
+      a {
+        color: #fff;
       }
     }
+  }
 }
 .active{
   display: block;

@@ -2,7 +2,7 @@
   .header__box
     .header__box__upper
       .header__box__upper__title-icon
-        = link_to root_path do
+        = link_to root_path, data:{"turbolinks" => false} do
           =image_tag asset_path("logo.png"), class: "header-image"
       .header__box__upper__search
         = form_with(url: search_items_path, local: true, method: :get, class: "header__box__upper__search__input") do |f|

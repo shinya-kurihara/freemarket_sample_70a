@@ -5,10 +5,10 @@ $(function() {
     });
     $(".header__box__navi__left__category li ul").hide();
     $(".header__box__navi__left__category li").hover(function() {
-        $(">ul:not(:animated)", this).stop(true, true).slideDown("fast");
+        $(">ul:not(:animated)", this).stop(true, true).show("fast");
         $(">a", this).addClass("active");
     }, function() {
-        $(">ul:not(:animated)", this).stop(true, true).slideUp("fast");
+        $(">ul:not(:animated)", this).stop(true, true).hide("fast");
         $(">a", this).removeClass("active");
   });
 });

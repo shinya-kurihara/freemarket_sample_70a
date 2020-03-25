@@ -69,9 +69,14 @@
                     %br/
                     = @item.category.name 
                     %br/
-                %tr
-                  %th ブランド
-                  %td= @item.brand.name
+                -if @item.brand_id.present?
+                  %tr
+                    %th ブランド
+                    %td= @item.brand.name
+                - else
+                  %tr
+                    %th ブランド
+                    %td
                 %tr
                   %th 商品の状態
                   %td= @item.item_condition.name
