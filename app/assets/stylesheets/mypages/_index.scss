@@ -5,15 +5,6 @@
   p {
     font-size: 12px;
   }
-  &__top {
-    height: 40px;
-    line-height: 40px;
-    background-color: white;
-    &--text {
-      padding-left: 22%;
-      box-shadow: 0 2px 4px gray;
-    }
-  }
   &__main {
     padding: 35px 22%;
     display: flex;

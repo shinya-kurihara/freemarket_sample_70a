@@ -9,6 +9,9 @@ FactoryBot.define do
     prefecture_id         {"1"}
     preparation_day_id    {"1"}
     price                 {"500"}
+    seller_id             {"1"}
+    buyer_id              {""}
+    brand_id              {""}
   end
 
   factory :item_image do

@@ -1,6 +1,6 @@
 - if item.buyer_id.nil?
   .pickup-container__product-box__product-lists__product-list
-    = link_to item_path(item), class: "line" do
+    = link_to item_path(item), data:{"turbolinks" => false}, class: "line" do
       .pickup-container__product-box__product-lists__product-list__img
         = image_tag item.first_image.image.url, class: "img_k"
       .body
@@ -16,7 +16,7 @@
           (税込)
 - else
   .pickup-container__product-box__product-lists__product-list
-    = link_to item_path(item), class: "line" do
+    = link_to item_path(item), data:{"turbolinks" => false}, class: "line" do
       .pickup-container__product-box__product-lists__product-list__img
         = image_tag item.first_image.image.url, class: "img_k"
       .sold-cover

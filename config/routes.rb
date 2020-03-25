@@ -17,10 +17,14 @@ Rails.application.routes.draw do
 
   root "items#index"
 
-  resources :items, only: [:index, :new, :create, :show, :edit, :destroy] do
+  resources :items do
     resources :comments, only: [:create, :destroy] do
-  end
+    end
     collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    member do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
@@ -28,6 +32,9 @@ Rails.application.routes.draw do
       collection do
         post 'pay', to: 'buy#pay'
       end
+    end
+    collection do
+      get 'search'
     end
   end
 

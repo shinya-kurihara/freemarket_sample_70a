@@ -2,8 +2,11 @@
   = render "shared/header"
 
   .mypage
-    .mypage__top 
-      %p.mypage__top--text メルカリ > マイページ > 支払い方法 > クレジットカード情報入力
+    %nav.breadcrumbs 
+      %ol
+        %li= link_to "フリマ", root_path
+        %li= link_to "マイページ", mypages_path
+        %li 支払い方法
 
     .mypage__main
       = render 'mypages/mypage_nav'
