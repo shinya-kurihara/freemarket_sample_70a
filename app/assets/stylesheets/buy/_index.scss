@@ -101,7 +101,8 @@
     &__footer {
       padding: 30px 0;
       border-top: 2px solid #f5f5f5;
-      &__btn {
+      .buy-btn {
+        width: 100%;
         padding: 10px;
         background-color: #3ccace;
         color: white;

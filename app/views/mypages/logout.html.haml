@@ -2,8 +2,11 @@
   = render "shared/header"
 
   .mypage
-    .mypage__top 
-      %p.mypage__top--text フリマ > マイページ > ログアウト
+    %nav.breadcrumbs 
+      %ol
+        %li= link_to "フリマ", root_path
+        %li= link_to "マイページ", mypages_path
+        %li ログアウト
 
     .mypage__main
       = render 'mypage_nav' 

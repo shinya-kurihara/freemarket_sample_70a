@@ -3,7 +3,7 @@
     .user-box__profile--image
       = image_tag 'free1.jpg', alt: 'プロフィール画像', class: 'user-image'
     .user-box__profile--name
-      %p.user-name 名無し
+      %p.user-name= @user.nickname
     .user-box__profile--introduction
       %p.user-evaluation 評価 0
       %p.user-items-count 出品数 0

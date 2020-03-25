@@ -5,7 +5,7 @@ describe ItemsController do
     it "renders the :search template" do
       get :search
       expect(response).to render_template :search
+
     end
   end
-
 end
