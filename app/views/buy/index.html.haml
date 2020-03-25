@@ -5,7 +5,7 @@
   %h2.buy-item__header 購入内容の確認
   .buy-item__box
     .buy-item__box__image
-      = image_tag 'free.jpg', class: 'image'
+      = image_tag @item.item_images[0].image.url, class: 'image'
         -if @item.buyer_id.present? 
         .items-box_photo_sold
           .items-box_photo_sold__inner SOLD
@@ -38,14 +38,14 @@
         %p 配送先
         = link_to "変更する", '#', class: 'buy-item__pay__address__text__edit'
       .buy-item__pay__address__list
-        %p 〒000-0000
-        %p 福岡県 福岡市 テックエキスパート
-        %p 元山 清春
+        %p= "郵便番号: #{@user.sending_destination.post_code}"
+        %p= "住所: #{@user.sending_destination.prefecture} #{@user.sending_destination.city} #{@user.sending_destination.house_number}"
+        %p= "氏名: #{@user.first_name} #{@user.last_name}"
     %section.buy-item__pay__footer
       - if @item.buyer_id.present? 
-        = link_to "売り切れました", '#', class:"disabled-button bold"
+        %p Sold Out
       - else
         = form_tag(action: :pay, method: :post) do
-          %button 購入する
+          %button.buy-btn 購入する
   
 = render "shared/mini_footer"
