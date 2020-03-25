@@ -3,6 +3,7 @@ class BuyController < ApplicationController
   before_action :set_card, :set_item
 
   def index
+    @user = User.find(current_user.id)
     if @card.blank?
       redirect_to controller: "credit_cards", action: "new"
     else
