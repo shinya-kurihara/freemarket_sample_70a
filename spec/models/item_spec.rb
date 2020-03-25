@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe Item do
   describe '#create' do
-
     # 1.写真や名前他全ての項目が存在すれば登録できること
-    it "is valid with a name, item_description, category, item_condition_id, postage_payer,_id prefecture_id, preparation_day_id, price" do
+    it "is valid with a name, item_description, category_id, item_condition_id, postage_payer,_id prefecture_id, preparation_day_id, price" do
       item = build(:item)
       expect(item).to be_valid
     end
@@ -25,9 +24,9 @@ describe Item do
 
     # 4.categoryが空だと登録できないこと
     it "is invalid without a category" do
-      item = build(:item, category: nil)
+      item = build(:item, category_id: nil)
       item.valid?
-      expect(item.errors[:category]).to include("can't be blank")
+      expect(item.errors[:category_id]).to include("can't be blank")
     end
 
     # 5.item_condition_idが空だと登録できないこと
