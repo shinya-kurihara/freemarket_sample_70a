@@ -3,17 +3,19 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to  "/items/#{@comment.item.id}" 
+    if @comment.save
+      redirect_to item_path(@item.id)
+    else
+      render "items/show"
+    end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.user_id == current_user.id
-      if @comment.destroy
-        redirect_to "/items/#{@comment.item.id}" 
-      else
+    if @comment.user_id == current_user.id && @comment.destroy
+      redirect_to item_path(@item.id)
+    else
       render "items/show"
-      end
     end
   end
 
