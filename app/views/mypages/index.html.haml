@@ -2,9 +2,10 @@
   = render "shared/header"
 
   .mypage
-    .mypage__top 
-      %p.mypage__top--text フリマ > マイページ
-
+    %nav.breadcrumbs 
+      %ol
+        %li= link_to "フリマ", root_path
+        %li マイページ
     .mypage__main
       = render 'mypage_nav'
       .mypage__main--contents

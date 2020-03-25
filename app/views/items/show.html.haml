@@ -1,22 +1,10 @@
 .wrapper
   = render "shared/header"
-  .nav
-    %ul.navber
-      =link_to "#" do
-        %li furima
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li レディース
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li トップス
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li Tシャツ/カットソー(半袖/袖なし)
-      %li= icon('fa', 'angle-right')
-      =link_to "#" do
-        %li product1
   .main
+    %nav.breadcrumbs 
+      %ol
+        %li= link_to "フリマ", root_path
+        %li= @item.name
     .showMain
       .showMain__contents
         .showMain__contents__content
@@ -28,8 +16,8 @@
                 %li
                 = image_tag @item_images[0].image.url ,class:"mainImage"
                   - if @item.buyer_id.present?
-                  .items-box_photo__sold
-                    .items-box_photo__sold__inner SOLD
+                  .sold-cover
+                  %p.sold sold
                 %ul
                   - @item_images.each do |image|
                     %li= image_tag image.image.url
@@ -43,7 +31,7 @@
                 = link_to "root_path", class:"sellerBtn" do
                   %h2 自分の商品です
               - elsif @item.buyer_id == nil
-                = link_to item_buy_index_path(@item.id), class:"buyBtn" do
+                = link_to item_buy_index_path(@item.id), data:{"turbolinks" => false}, class:"buyBtn" do
                   %h2 購入画面に進む
               - else
                 = link_to root_path, class:"soldOutBtn" do
@@ -69,10 +57,14 @@
                     %br/
                     = @item.category.name 
                     %br/
-                %tr
-                  %th ブランド
-                  %td ※商品出品機能実装後に設定（Brandテーブルがないため）
-                  -# = @item.brand.name
+                -if @item.brand_id.present?
+                  %tr
+                    %th ブランド
+                    %td= @item.brand.name
+                - else
+                  %tr
+                    %th ブランド
+                    %td
                 %tr
                   %th 商品の状態
                   %td= @item.item_condition.name
@@ -99,9 +91,9 @@
                     不適切な商品の通報
           - if user_signed_in? && current_user.id == @item.seller_id
             .sellerSelect
-              = link_to '商品の編集', "#", class: 'seller__edit'
+              = link_to '商品の編集', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'seller__edit'
               %p または
-              = link_to 'この商品を削除する', item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
           .commentBox
             .comments
               - if @comments
