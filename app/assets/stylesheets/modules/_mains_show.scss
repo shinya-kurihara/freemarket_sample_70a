@@ -158,9 +158,9 @@
         }
         .sellerSelect {
           width: 100%;
-          margin: 10px 0;
+          margin: 20px 0;
           background-color: #fff;
-          padding: 24px 40px;
+          padding: 15px 40px;
           a {
             display: inline-block;
             text-decoration: none;
@@ -182,14 +182,46 @@
             line-height: 40px;
             text-align: center;
             background-color: #ffb340;
-            margin-bottom: 10px;
           }
         }
         .commentBox {
-          padding: 24px;
+          padding: 0 40px 25px 40px;
           background-color: #fff;
           margin: 10px 0;
           text-align: center;
+          .comment__user {
+            color: black;
+            text-align: left;
+            padding-bottom: 7px;
+          }
+          .comment__massage__text {
+            text-align: left;
+            padding: 15px 10px;
+            line-height: 30px;
+            background-color: #eef0f4;
+            margin-bottom: 10px;
+            color: black;
+            border-radius: 7px;
+            overflow-wrap: break-word;
+            p {
+              font-size: 12px;
+              text-align: right;
+              color: #aaa;
+            }
+          }
+          .comment__delete {
+            width: 55px;
+            line-height: 30px;
+            padding: 0px 10px;
+            margin: 0px 565px 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 7px;
+            background-color: #ffb340;
+            a {
+              text-decoration: none;
+              color: white;
+            }
+          }
           .commentContents {
             textarea {
               width: 100%;

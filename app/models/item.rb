@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :brand, optional: true
+  has_many :comments, dependent: :destroy
 
   validates :item_images,         presence: true
   validates :name,                presence: true, length: { maximum: 40 }

@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
 
   def show
     @item_images = @item.item_images
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def destroy

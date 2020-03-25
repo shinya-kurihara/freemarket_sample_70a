@@ -95,15 +95,28 @@
               %p または
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
           .commentBox
+            .comments
+              - if @comments
+                - @comments.each do |comment|
+                  .comments__text__user
+                    %strong
+                      .comment__user
+                        %p= comment.user.nickname
+                      .comment__massage__text
+                        = comment.text
+                        %p= comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                      .comment__delete
+                        = link_to '削除', "/items/#{@item.id}/comments/#{comment.id}", method: :delete
+
             .commentContents
-              %textarea
-              %p.noticeMessage
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br
-                不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              %submit.commentBtn
-                = icon('fa', 'comment')
-                コメントする
+              - if user_signed_in?
+                = form_with(model: [@item, @comment], local:true, id: "new_comment") do |f|
+                  = f.text_area :text, class: 'textarea', rows: "2"
+                  .noticeMessage
+                    相手のことを考え丁寧なコメントを心がけましょう。
+                    %br
+                    不快な言葉遣いなどは利用制限や退会処分となることがあります。
+                  = f.submit "コメントする", class: "commentBtn"
           %ul.links
             =link_to "#" do
               %li
