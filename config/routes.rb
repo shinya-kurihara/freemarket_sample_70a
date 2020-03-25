@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
-
+　　
   root "items#index"
 
   resources :items, only: [:index, :new, :create, :show, :edit, :destroy] do
