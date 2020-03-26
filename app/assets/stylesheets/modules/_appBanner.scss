@@ -1,38 +1,79 @@
-.appBanner{
+.appBanner {
   background-image: asset-url("bg-appBanner-pict.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
   background-position: center;
-  &__inner{
+  &__inner {
     color: white;
     text-align: center; 
-    &__title{
+    &__title {
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
       margin: 0;
     }
-    &__text{
+    &__text {
       font-size: 35px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       margin: 0;
     }
-    &__icon{
+    &__icon {
       width: 100%;
       display: flex;
       justify-content: center;
       margin: 20px auto 0;
-      .icon-apple{
+      img {
         margin: 20px;
         height:55px;
         width: 180px;
       }
-      .icon-google{
-        margin: 20px;
-        height:55px;
-        width: 180px;
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .appBanner {
+    padding: 70px 30px;
+    &__inner {
+      &__title {
+        font-size: 20px;
+      }
+      &__text {
+        font-size: 30px;
+      }
+      &__icon {
+        width: 100%;
+        margin: 10px auto 0;
+        img {
+          margin: 10px;
+          width: 119px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .appBanner {
+    padding: 50px 20px;
+    &__inner {
+      &__title {
+        font-size: 16px;
+      }
+      &__text {
+        font-size: 24px;
+      }
+      &__icon {
+        width: 100%;
+        margin: 5px auto 0;
+        img {
+          margin: 5px;
+          width: 68px;
+          height: 20px;
+        }
       }
     }
   }

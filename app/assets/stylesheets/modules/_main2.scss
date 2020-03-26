@@ -1,24 +1,20 @@
 .introduction {
-  padding: 60px 20px;
+  padding: 50px 0;
   &__subtitle {
     font-weight: bold;
     font-size: 26px;
-    line-height: 1.4;
     text-align: center;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 35px;
   }
   &__lists {
     display: flex;
+    justify-content: space-between;
     width: 100%;
-    max-width: 1020px;
+    max-width: 1040px;
     margin: 0 auto;
     &__tag {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 306px;
-      margin: 16px 5% 0 0;
+      margin: 0 auto;
+      width: 29.5%;
       &__src {
         position: relative;
         margin-bottom: 20px;
@@ -29,18 +25,90 @@
           padding: 10px 20px;
           font-size: 30px;
         }
+        .image {
+          img {
+            object-fit: cover;
+          }
+        }
       }
       &__text {
-        display: flex;
         font-weight: bold;
         font-size: 24px;
         line-height: 50px;
-        .text_top {
+        text-align: center;
+        span {
           color: #3ccace;
         }
       }
       &__comment {
-        margin: 16px 0 0;
+        margin-top: 16px;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .introduction {
+    padding: 40px 0;
+    &__subtitle {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #3ccace;
+    }
+    &__lists {
+      &__tag {
+        background-color: #ffb340;
+        padding: 10px 0;
+        &__src {
+          display: none;
+        }
+        &__text {
+          color: #ffffff;
+          font-size: 18px;
+          line-height: 40px;
+          span {
+            color: #ffffff;
+          }
+        }
+        &__comment {
+          margin-top: 12px;
+          font-size: 14px;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .introduction {
+    padding: 20px 0;
+    &__subtitle {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+    &__lists {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      &__tag {
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 20px;
+        &__src {
+          display: none;
+        }
+        &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+        }
+        &__comment {
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
       }
     }
   }

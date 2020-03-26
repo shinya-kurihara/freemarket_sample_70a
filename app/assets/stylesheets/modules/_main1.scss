@@ -7,7 +7,7 @@
   background-position: top;
   display: flex;
   align-items: center;
-  padding: 0 60px;
+  padding-left: 60px;
   &__content {
     &__subtitle {
       color: white;
@@ -25,6 +25,60 @@
       margin-top: 24px;
       &__abtn {
         margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .main-visual {
+    height: 360px;
+    padding-left: 55px;
+    &__content {
+      &__subtitle {
+        font-size: 40px;
+      }
+      &__text {
+        font-size: 14px;
+        margin-top: 14px;
+      }
+      &__btn {
+        display: flex;
+        margin-top: 20px;
+        &__abtn {
+          margin-right: 15px;
+        }
+        img {
+          width: 119px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .main-visual {
+    height: 220px;
+    padding-left: 50px;
+    &__content {
+      &__subtitle {
+        font-size: 25px;
+      }
+      &__text {
+        font-size: 12px;
+        margin-top: 12px;
+      }
+      &__btn {
+        display: flex;
+        margin-top: 14px;
+        &__abtn {
+          margin-right: 10px;
+        }
+        img {
+          width: 68px;
+          height: 20px;
+        }
       }
     }
   }
