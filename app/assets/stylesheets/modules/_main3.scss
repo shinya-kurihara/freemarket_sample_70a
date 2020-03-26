@@ -7,7 +7,7 @@
   background-position: bottom right;
   display: flex;
   align-items: center;
-  padding: 0 120px;
+  padding-left: 120px;
   &__content {
     &__subtitle {
       color: white;
@@ -35,6 +35,70 @@
       margin-top: 24px;
       &__abtn {
         margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .main-visual2 {
+    height: 260px;
+    padding-left: 100px;
+    &__content {
+      &__subtitle {
+        font-size: 24px;
+      }
+      &__text {
+        font-size: 16px;
+        margin-top: 16px;
+      }
+      &__text2 {
+        font-size: 16px;
+      }
+      &__text3 {
+        font-size: 16px;
+      }
+      &__btn {
+        margin-top: 20px;
+        &__abtn {
+          margin-right: 15px;
+        }
+        img {
+          width: 119px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .main-visual2 {
+    height: 200px;
+    padding-left: 80px;
+    &__content {
+      &__subtitle {
+        font-size: 20px;
+      }
+      &__text {
+        font-size: 12px;
+        margin-top: 16px;
+      }
+      &__text2 {
+        font-size: 12px;
+      }
+      &__text3 {
+        font-size: 12px;
+      }
+      &__btn {
+        margin-top: 14px;
+        &__abtn {
+          margin-right: 10px;
+        }
+        img {
+          width: 68px;
+          height: 20px;
+        }
       }
     }
   }
