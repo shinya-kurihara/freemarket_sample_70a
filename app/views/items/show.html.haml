@@ -89,11 +89,15 @@
                   %li.reportBtn
                     = icon('fa', 'flag')
                     不適切な商品の通報
-          - if user_signed_in? && current_user.id == @item.seller_id
+          - if @item.buyer_id != nil
+            .sellerSelect
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
+          - elsif user_signed_in? && current_user.id == @item.seller_id
             .sellerSelect
               = link_to '商品の編集', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'seller__edit'
               %p または
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'seller__delete'
+          - else
           .commentBox
             .comments
               - if @comments

@@ -4,7 +4,6 @@
   margin-top: 26px;
   margin-bottom: 26px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   &__product-list {
     .line {
@@ -115,8 +114,7 @@
 
 @media (max-width: 800px) {
   .pickup-container__product-box__product-lists {
-    width: 600px;
-    justify-content: center;
+    width: 550px;
     &__product-list {
       .line {
         img {
@@ -140,7 +138,7 @@
 
 @media (max-width: 550px) {
   .pickup-container__product-box__product-lists {
-    width: 350px;
+    width: 300px;
     justify-content: center;
     &__product-list {
       .line {
