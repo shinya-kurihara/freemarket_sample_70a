@@ -1,7 +1,7 @@
 .user-box
   .user-box__profile
     .user-box__profile--image
-      = image_tag 'free1.jpg', alt: 'プロフィール画像', class: 'user-image'
+      = image_tag 'icon/user_image.png', alt: 'プロフィール画像', class: 'user-image'
     .user-box__profile--name
       %p.user-name= @user.nickname
     .user-box__profile--introduction
@@ -15,30 +15,32 @@
   %ul.user-box__info
     %li
       = link_to '#', class:'user-box__info--text' do
-        = image_tag 'free1.jpg', class: 'user-info-image'
+        = image_tag 'icon/user_image.png', class: 'user-info-image'
         .user-info-body
-          %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+          %p.user-info-body__text 
+            《CM放映中》たくさん出品して1億円分のポイントを山分けしちゃおう！
           .user-info-body__time
             %i.fa.fa-clock
-            %p.user-info-body__time--text ２時間前
+            %p.user-info-body__time--text 1時間前
         %i.fa.fa-chevron-right
     %li
       = link_to '#', class:'user-box__info--text' do
-        = image_tag 'free1.jpg', class: 'user-info-image'
+        = image_tag 'icon/user_image.png', class: 'user-info-image'
         .user-info-body
-          %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+          %p.user-info-body__text 
+            "最大1,000円分のポイントがもらえる"出品キャンペーン開催中
           .user-info-body__time
             %i.fa.fa-clock
-            %p.user-info-body__time--text ２時間前
+            %p.user-info-body__time--text 2時間前
         %i.fa.fa-chevron-right
     %li
       = link_to '#', class:'user-box__info--text' do
-        = image_tag 'free1.jpg', class: 'user-info-image'
+        = image_tag 'icon/user_image.png', class: 'user-info-image'
         .user-info-body
           %p.user-info-body__text お知らせお知らせお知らせお知らせお知らせお知らせお知らせ
           .user-info-body__time
             %i.fa.fa-clock
-            %p.user-info-body__time--text ２時間前
+            %p.user-info-body__time--text 3時間前
         %i.fa.fa-chevron-right
     %li.user-box__info--list
       = link_to '#', class: 'user-info-btn' do

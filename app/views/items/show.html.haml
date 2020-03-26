@@ -9,8 +9,8 @@
       .showMain__contents
         .showMain__contents__content
           .itemBox
-            -# .itemBox__name
-            -#   %h2= "商品名：#{@item.name}"
+            .itemBox__name
+              %h2= "商品名：#{@item.name}"
             .itemBox__image
               %ul
                 %li.top-image
@@ -31,8 +31,12 @@
                 = link_to "root_path", class:"sellerBtn" do
                   %h2 自分の商品です
               - elsif @item.buyer_id == nil
-                = link_to item_buy_index_path(@item.id), data:{"turbolinks" => false}, class:"buyBtn" do
-                  %h2 購入画面に進む
+                - if @card.blank?
+                  = link_to new_credit_card_path(@item.id), data:{"turbolinks" => false}, class:"buyBtn" do
+                    %h2 カード登録して購入する
+                - else
+                  = link_to item_buy_index_path(@item.id), data:{"turbolinks" => false}, class:"buyBtn" do
+                    %h2 購入画面に進む
               - else
                 = link_to root_path, class:"soldOutBtn" do
                   %h2 Sold Out
