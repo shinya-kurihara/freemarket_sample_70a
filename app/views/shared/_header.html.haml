@@ -18,11 +18,23 @@
           =link_to "#" , class:"header__box__navi__left__brand" do
             ブランド
       .header__box__navi__right
-      - if user_signed_in?
-        = link_to "マイページ", mypages_path
-          
-      - else
-        =link_to "ログイン", new_user_session_path, class:"header__box__navi__right__login" 
-        =link_to "新規登録", new_user_registration_path, class:"header__box__navi__right__new" 
+        - if user_signed_in?
+          = link_to "マイページ", mypages_path, class:"header__box__navi__right__mypage" 
+            
+        - else
+          =link_to "ログイン", new_user_session_path, class:"header__box__navi__right__login" 
+          =link_to "新規登録", new_user_registration_path, class:"header__box__navi__right__new" 
+    .header__box__menuIcon
+      = icon('fas', 'bars')
+      メニュー
 
-        
+-# %nav#menuNavi
+-#   =link_to "カテゴリ" , root_path, class:"menuNavi__brand" 
+
+-#   =link_to "ブランド" , root_path, class:"menuNavi__brand" 
+
+-#   - if user_signed_in?
+-#     =link_to "マイページ", mypages_path, class:"menuNavi__mypage" 
+-#   - else
+-#     =link_to "ログイン", new_user_session_path, class:"menuNavi__login" 
+-#     =link_to "新規登録", new_user_registration_path, class:"menuNavi__new" 

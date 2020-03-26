@@ -1,7 +1,10 @@
 .pickup-container__product-box__product-lists {
-  width: 960px;
-  margin: 26px auto;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 26px;
+  margin-bottom: 26px;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   &__product-list {
     .line {
@@ -63,4 +66,79 @@
   font-size: 24px;
   color: white;
   transform: rotate(315deg); 
+}
+
+@media (max-width: 1040px) {
+  .pickup-container__product-box__product-lists {
+    width: 800px;
+    justify-content: space-between;
+    &__product-list {
+      .line {
+        img {
+        }
+        .body {
+          &__name {
+          }
+          &__details {
+            &__price {
+            }
+            &__star {
+            }
+          }
+          &__tax {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .pickup-container__product-box__product-lists {
+    width: 600px;
+    justify-content: center;
+    &__product-list {
+      .line {
+        img {
+        }
+        .body {
+          &__name {
+          }
+          &__details {
+            &__price {
+            }
+            &__star {
+            }
+          }
+          &__tax {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .pickup-container__product-box__product-lists {
+    width: 350px;
+    justify-content: center;
+    &__product-list {
+      .line {
+        img {
+        }
+        .body {
+          &__name {
+          }
+          &__details {
+            &__price {
+            }
+            &__star {
+            }
+          }
+          &__tax {
+          }
+        }
+      }
+    }
+  }
 }
