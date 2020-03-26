@@ -17,7 +17,7 @@
                 .formRequire
                   必須
               .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
-                最大10枚までアップロードできます
+                最大5枚までアップロードできます
               .exhibit__main__itemProfile__inputForm__sellImage__upload__box
                 .prev-content
                   - @item.item_images.each do |image|
@@ -136,7 +136,7 @@
 
           .exhibit__main__itemProfile__inputForm__warning
             = f.submit '変更する', class: "exhibitSubmit1"
-            = link_to root_path, class: "exhibitSubmit2" do
+            = link_to item_path(@item.id), class: "exhibitSubmit2" do
               もどる
             .exhibit__main__itemProfile__inputForm__warning__links
               %span.exhibit__main__itemProfile__inputForm__warning__links__link

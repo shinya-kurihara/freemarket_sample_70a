@@ -58,12 +58,32 @@
   border-bottom: 50px solid transparent;
   border-left: 50px solid #4FCFD3;
 }
+.sold-cover.show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 80px solid #4FCFD3;
+  border-right: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid #4FCFD3;
+}
+
 .sold {
   position: absolute;
   top: 0;
   left: 0;
   padding-top: 25px;
   font-size: 24px;
+  color: white;
+  transform: rotate(315deg); 
+}
+
+.sold.show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  font-size: 40px;
   color: white;
   transform: rotate(315deg); 
 }

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
   has_many :seller_items, foreign_key: "seller_id", class_name: "items"
   has_one :credit_card
+  has_many :comments
 
   validates :nickname,           presence: true
   validates :email,              presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }

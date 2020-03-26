@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:item_images).order("created_at DESC")
-    @parents = Category.where(ancestry: nil)
   end
 
   def new
@@ -24,6 +23,8 @@ class ItemsController < ApplicationController
 
   def show
     @item_images = @item.item_images
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def destroy
@@ -105,5 +106,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
