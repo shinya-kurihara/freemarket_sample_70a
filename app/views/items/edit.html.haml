@@ -32,7 +32,7 @@
                             %span 削除
                 .label-content
                   //プレビューの数に合わせてforオプションを指定
-                  = f.label :"item_images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
+                  = f.label :"item-item_images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
                   = f.fields_for :item_images do |i|

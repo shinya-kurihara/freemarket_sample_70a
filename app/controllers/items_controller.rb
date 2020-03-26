@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     @item_images = @item.item_images
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @card = CreditCard.where(user_id: current_user).first
   end
 
   def destroy
