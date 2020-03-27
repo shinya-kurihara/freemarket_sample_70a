@@ -6,7 +6,6 @@
     .title
       会員情報入力
     = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-      = render "devise/shared/error_messages", resource: resource
       .main
         .input
           .input__nickname
@@ -16,6 +15,7 @@
               .red
                 必須
             =f.text_field :nickname, autofocus: true, placeholder: "　例）フリマ太郎", class: "input__nickname__form", id: "nickname"
+            #Input_error__name
           .input__email
             .input__email__text.SideType
               .bold
@@ -23,7 +23,7 @@
               .red
                 必須
             = f.text_field :email, placeholder: "　PC・携帯どちらでも可", class: "input__email__form", id: "email"
-          
+            #Input_error__email
           .input__password
             .input__password__text.SideType
               .bold
@@ -31,7 +31,7 @@
               .red
                 必須
             = f.password_field :password, autocomplete: "off", placeholder: "　7文字以上の半角英数字", class: "input__password__form", id: "password"
-
+            #Input_error__password
           .input__password
             .input__password__text.SideType
               .bold
@@ -39,7 +39,7 @@
               .red
                 必須
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: "　もう一度パスワードを入力してください", class: "input__password__form", id: "password2"
-
+            #Input_error__password2
           .input__name
             .input__name__title.bold
               本人確認
@@ -53,7 +53,8 @@
             .input__name__fullname
               = f.text_field :first_name, autofocus: true, placeholder: "　例）山田", class: "input__name__fullname__first_name", id: "first_name"
               = f.text_field :last_name, autofocus: true, placeholder: "　例）彩", class: "input__name__fullname__last_name", id: "last_name"
-
+            #Input_error__first_name
+            #Input_error__last_name
           .input__kana
             .input__kana__text.SideType
               .bold
@@ -63,7 +64,8 @@
             .input__kana__fullname
               = f.text_field :first_kana, autofocus: true, placeholder: "　例）やまだ", class: "input__kana__fullname__first_kana", id: "first_kana"
               = f.text_field :last_kana, autofocus: true, placeholder: "　例）あや", class: "input__kana__fullname__last_kana", id: "last_kana"
-
+            #Input_error__first_kana
+            #Input_error__last_kana
           .input__birthday
             .input__birthday__text.SideType
               .input__birthday__text.bold
@@ -93,6 +95,8 @@
                   = options_for_select(array)
                 %span
                   日
+          #Input_error__birthday__select
+
           .input__submit
             .input__submit__text.Note
               ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合があります。
