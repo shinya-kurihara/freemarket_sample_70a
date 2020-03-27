@@ -199,3 +199,114 @@ a {
     }
   }
 }
+
+.field_with_errors {
+  display: contents;
+}
+.error{
+  display: none;
+}
+
+#error_explanation {
+  padding: 20px 150px;
+}
+
+#Input_error__name {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__email {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__password {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__password2 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__first_name {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__last_name {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+#Input_error__first_kana {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__last_kana {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+  margin-bottom: 30px;
+
+}
+
+#Input_error__birth_year {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+}
+
+#Input_error__birth_month {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+#Input_error__birthday {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
+
+
+#Input_error__birthday__select{
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
+}
