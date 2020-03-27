@@ -10,7 +10,7 @@
         .showMain__contents__content
           .itemBox
             .itemBox__name
-              %h2= "商品名：#{@item.name}"
+              %h2= @item.name
             .itemBox__image
               %ul
                 %li.top-image
@@ -46,7 +46,7 @@
               = link_to new_user_registration_path, class:"buyBtn" do
                 %h2 新規会員登録して購入
             .itemBox__introduction
-              = "商品説明：#{@item.item_description}"
+              = @item.item_description
             .table
               %table.table__details
                 %tr
