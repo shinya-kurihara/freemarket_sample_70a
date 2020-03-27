@@ -164,91 +164,51 @@ function input_check(){
   let result = true;
 
   // エラー用装飾のためのクラスリセット
-  $('#family_name_address').removeClass("inp_error");
-  $('#first_name_address').removeClass("inp_error");
-  $('#family_furigana_address').removeClass("inp_error");
-  $('#first_furigana_address').removeClass("inp_error");
-  $('#number').removeClass("inp_error");
+  $('#post_code').removeClass("inp_error");
   $('#prefecture').removeClass("inp_error");
-  $('#municipality').removeClass("inp_error");
-  $('#street').removeClass("inp_error");
+  $('#city').removeClass("inp_error");
+  $('#house_number').removeClass("inp_error");
 
 
   // 入力エラー文をリセット
-  $("#Input_error__family_name_address").empty();
-  $("#Input_error__first_name_address").empty();
-  $("#Input_error__family_furigana_address").empty();
-  $("#Input_error__first_furigana_address").empty();
-  $("#Input_error__number").empty();
+  $("#Input_error__post_code").empty();
   $("#Input_error__prefecture").empty();
-  $("#Input_error__municipality").empty();
-  $("#Input_error__street").empty();
+  $("#Input_error__city").empty();
+  $("#Input_error__house_number").empty();
 
   // 入力内容セット
-  let family_name_address           =$('#family_name_address').val();
-  let first_name_address            =$('#first_name_address').val();
-  let family_furigana_address       =$('#family_furigana_address').val();
-  let first_furigana_address        =$('#first_furigana_address').val();
-  let number                        =$('#number').val();
-  let address_prefecture            =$('#address_prefecture').val();
-  let municipality                  =$('#municipality').val();
-  let street                        =$('#street').val();
+  let post_code                        =$('#post_code').val();
+  let prefecture            =$('#prefecture').val();
+  let city                  =$('#city').val();
+  let house_number                        =$('#house_number').val();
 
   // 入力内容チェック
 
-  //苗字
-  if(family_name_address == ""){
-    $("#Input_error__family_name_address").html("苗字を入力してください");
-    $("#family_name_address").addClass("inp_error");
-    result = false;
-   }
-
-   //名前
-   if(first_name_address == ""){
-    $("#Input_error__first_name_address").html("名前を入力してください");
-    $("#family_name_address").addClass("inp_error");
-    result = false;
-   }
- 
-   //苗字(カナ)
-   if(family_furigana_address == ""){
-    $("#Input_error__family_furigana_address").html("苗字カナを入力してください");
-    $("#family_furigana_address").addClass("inp_error");
-    result = false;
-   }
- 
-   //苗字(カナ)
-   if(first_furigana_address == ""){
-    $("#Input_error__first_furigana_address").html("名前カナを入力してください");
-    $("#namemeikana_address").addClass("inp_error");
-    result = false;
-   }
-
   // 郵便番号
-  if(number == ""){
-   $("#Input_error__number").html("郵便番号を入力してください");
-   $("#number").addClass("inp_error");
+  if(post_code == ""){
+   $("#Input_error__post_code").html("郵便番号を入力してください");
+   $("#post_code").addClass("inp_error");
    result = false;
   }
 
   //都道府県
-  if(address_prefecture == ""){
+  if(prefecture == ""){
    $("#Input_error__prefecture").html("都道府県を入力してください");
-   $("#address_prefecture").addClass("inp_error");
+   $("#prefecture").addClass("inp_error");
    result = false;
   }
 
   //市町村区
-  if(municipality == ""){
-   $("#Input_error__municipality").html("市町村区を入力してください");
-   $("#municipality").addClass("inp_error");
+  if(city == ""){
+   $("#Input_error__city").html("市町村区を入力してください");
+   $("#city").addClass("inp_error");
    result = false;
   }
 
   //番地
-  if(street == ""){
-   $("#Input_error__street").html("番地を入力してください");
-   $("#street").addClass("inp_error");
+  if(house_number == ""){
+   $("#Input_error__house_number").html("番地を入力してください");
+   $("#house_number").addClass("inp_error");
    result = false;
   }
 
@@ -257,11 +217,11 @@ function input_check(){
 
 
 
-  $("#AddressInput__btn").on('click',function(e){
+  $("#Addressinput__btn").on('click',function(e){
     e.preventDefault();                      //エラー文消さない
     if(input_check()){                        //
 
-      $('#new_address').attr('action', '/addresses').submit();
+      $('#new_sending_destination').attr('action', '/sending_destinations').submit();
 
       return false;                           //親要素のイベントを発生させない
     }
