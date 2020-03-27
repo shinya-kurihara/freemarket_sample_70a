@@ -61,7 +61,7 @@ function input_check(){
     $("#Input_error__email").html("メールアドレスを入力してください")
     $(email).addClass("inp_error");
     result = false;
-  }else if(!email.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+  }else if(email.match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)){
     $("#Input_error__email").html("フォーマットが不適切です");
     $("#email").addClass("inp_error");
     result = false;
