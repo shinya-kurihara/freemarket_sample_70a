@@ -1,5 +1,5 @@
 .pickup-container__product-box__product-lists {
-  width: 1000px;
+  width: 960px;
   margin: 0 auto;
   margin-top: 26px;
   margin-bottom: 26px;
@@ -11,8 +11,7 @@
       display: inline-block;
       text-decoration: none;
       color: #333;
-      margin-right: 20px;
-      margin-bottom: 20px;
+      margin :0 10px 20px 10px;
       position: relative;
       img {
         width: 220px;
@@ -89,7 +88,7 @@
 
 @media (max-width: 1040px) {
   .pickup-container__product-box__product-lists {
-    width: 800px;
+    width: 720px;
     &__product-list {
       .line {
         img {
@@ -113,7 +112,7 @@
 
 @media (max-width: 800px) {
   .pickup-container__product-box__product-lists {
-    width: 550px;
+    width: 480px;
     &__product-list {
       .line {
         img {
@@ -137,7 +136,7 @@
 
 @media (max-width: 550px) {
   .pickup-container__product-box__product-lists {
-    width: 300px;
+    width: 250px;
     justify-content: center;
     &__product-list {
       .line {
